@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Feed Subscriptions</title>
+</head>
+<body>
+  <outline title="contributions " text="contributions ">
+      <outline text="platform - Bug #2417: Amahi Dashboard show old news" title="platform - Bug #2417: Amahi Dashboard show old news" type="rss" 
+            xmlUrl="https://bugs.amahi.org/issues/2417.atom?key=b1121815e9edf6638056d0251ec4d1d6b862cc4d" htmlUrl="https://bugs.amahi.org/" scanDelay="3"/>
+  </outline>
+  <outline title="bugs" text="bugs">
+  </outline>
+  <outline title="system-updates" text="system-updates">
+      <outline text="Arch Linux News Updates" title="Arch Linux News Updates" type="rss" 
+            xmlUrl="https://www.archlinux.org/feeds/news/" htmlUrl="https://www.archlinux.org/news/"/>
+      <outline text="Arch Linux Package Updates" title="Arch Linux Package Updates" type="rss" 
+            xmlUrl="https://www.archlinux.org/feeds/packages/" htmlUrl="https://www.archlinux.org/packages/"/>
+      <outline text="Latest Linux Kernel Releases" title="Latest Linux Kernel Releases" type="rss" 
+            xmlUrl="https://www.kernel.org/feeds/kdist.xml" htmlUrl="http://www.kernel.org"/>
+  </outline>
+</body>
+</opml>
