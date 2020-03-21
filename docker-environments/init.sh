@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#setup unix password
+passwd
 # set up minimum environment
 apt update
 apt upgrade 
