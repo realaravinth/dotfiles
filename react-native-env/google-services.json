@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "482631820805",
+    "firebase_url": "https://chat-batsense-net.firebaseio.com",
+    "project_id": "chat-batsense-net",
+    "storage_bucket": "chat-batsense-net.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482631820805:android:49e8a26e1befc196e39e6c",
+        "android_client_info": {
+          "package_name": "chat.rocket.reactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482631820805-vsuj5qvhppbv6qcnna4uncgnfhm1kt08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHwCiTxxqNh63coqvkCkjg-1QnFjh2y0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482631820805-vsuj5qvhppbv6qcnna4uncgnfhm1kt08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
