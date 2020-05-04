@@ -1,20 +1,44 @@
-set nocompatible
-filetype plugin on
-set path+=**
-set wildmenu
-
-set nowrap
-set number
+"set relative line numbers on
+:set number
+:set relativenumber
+:set rnu
+execute pathogen#infect()
 syntax on
-colorscheme simonvic
+filetype plugin indent on
 
-set ts=2 sw=2 et
+set autoindent
+"set tw=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+autocmd Filetype css setlocal tabstop=2
+autocmd Filetype html setlocal tabstop=2
+autocmd Filetype sh setlocal tabstop=2
 
+"color scheme
+colorscheme flattened_dark
+set t_Co=256
 
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=blue ctermbg=8
+"Airline theme customization
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1 
+
+" Nerdtree
+map  <C-b> :NERDTree <CR>
+
+" setting 80-character line marker
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" SSH sync
+
+function Sync()
+    :!  if [ $(pwd | grep "/home/aravinth/code/debian-gsoc") ]; then /home/aravinth/code/debian-gsoc/copy-to-vm.sh ;fi&
+endfunction
+
+map <C-s> :call Sync() <CR>
