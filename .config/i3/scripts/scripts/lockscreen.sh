@@ -1,0 +1,1 @@
+/home/aravinth/dotfiles/.config/i3/scripts/lockscreen.sh

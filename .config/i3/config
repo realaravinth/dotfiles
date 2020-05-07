@@ -5,11 +5,11 @@
 # this file and re-run i3-config-wizard(1).
 #
 #Customization values
-set $FONT "source-code-pro-regular"
+set $FONT "ttf-font-awesome"
 set $FONT_SIZE "10"
 set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/arch-darker.png"
 set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
-set $I3LOCK_ALIAS "/home/aravinth/.config/i3/scripts/lockscreen.sh"
+set $I3LOCK_ALIAS /home/aravinth/.config/i3/scripts/lockscreen.sh
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -29,7 +29,7 @@ font pango:$FONT $FONT_SIZE
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- $i3LOCK_ALIAS 
+exec --no-startup-id xss-lock --transfer-sleep-lock --  $I3LOCK_ALIAS
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -116,11 +116,11 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: " 
+set $ws10 "10: "
+set $ws11 "11: 󲈳"
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -132,6 +132,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+/ workspace number $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -144,6 +145,9 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym $mod+z move workspace to output right
+bindsym $mod+x move workspace to output left
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -208,5 +212,29 @@ exec ssh-add .ssh/aravinth
 # Setting background
 exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/arch-darker.png
 
+# Starting settings-daemon
+exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd 
+
+# lockscreen
+#exec $I3LOCK_ALIAS
+
 # Disable title bar
     new_window pixel 0
+
+# Auto-start applications
+exec thunderbird
+exec telegram-desktop
+exec rocketchat-desktop
+exec riot-desktop
+exec spotify
+exec bitwarden-desktop
+
+# Workspace assignments
+assign [class="Spotify"] $ws7
+assign [class="spotify"] $ws7
+assign [class="Riot"] $ws8
+assign [class="Rocket.Chat"] $ws8
+assign [class="Telegram"] $ws8
+assign [class="Bitwarden"] $ws9
+assign [class="Thunderbird"] $ws10
+assign [class="Virtualbox Manager"] $ws11

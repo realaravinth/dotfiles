@@ -25,7 +25,7 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1 
 
 " Nerdtree
-map  <C-b> :NERDTree <CR>
+map  <C-m> :NERDTree <CR>
 
 " setting 80-character line marker
 
@@ -35,10 +35,8 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" SSH sync
+" Setting splits open direction
+set splitright
+set splitbelow
 
-function Sync()
-    :!  if [ $(pwd | grep "/home/aravinth/code/debian-gsoc") ]; then /home/aravinth/code/debian-gsoc/copy-to-vm.sh ;fi&
-endfunction
 
-map <C-s> :call Sync() <CR>
