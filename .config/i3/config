@@ -9,7 +9,6 @@ set $FONT "ttf-font-awesome"
 set $FONT_SIZE "10"
 set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/arch-darker.png"
 set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
-set $I3LOCK_ALIAS /home/aravinth/.config/i3/scripts/lockscreen.sh
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -29,8 +28,7 @@ font pango:$FONT $FONT_SIZE
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock --  $I3LOCK_ALIAS
-
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -182,7 +180,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+Shift+x  exec $I3LOCK_ALIAS  
+bindsym $mod+Shift+x  exec ~/.config/i3/scripts/lockscreen.sh  
 bindsym $mod+b  exec firefox
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -216,7 +214,7 @@ exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/arch-darker.png
 exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd 
 
 # lockscreen
-#exec $I3LOCK_ALIAS
+exec ~/.config/i3/scripts/lockscreen.sh 
 
 # Disable title bar
     new_window pixel 0
@@ -225,7 +223,7 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
 exec thunderbird
 exec telegram-desktop
 exec rocketchat-desktop
-exec riot-desktop
+#exec riot-desktop
 exec spotify
 exec bitwarden-desktop
 
