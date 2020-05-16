@@ -199,19 +199,22 @@ bar {
 exec_always monitor extends right
 exec_always redshift -O 6500
 exec_always redshift -O 4500
-exec --no-startup-id /usr/lib/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-flashback
-exec terminal
-exec eval "$(ssh-agent)
-exec ssh-add .ssh/aravinth
+#exec --no-startup-id /usr/lib/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id gnome-flashback
+#exec terminal
+#exec eval "$(ssh-agent)
+#exec ssh-add .ssh/aravinth
 
 # Setting background
 exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/arch-darker.png
 
 # Starting settings-daemon
 exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd 
+
+# start vm
+#exec vboxmanage startvm "windows 10"
 
 # lockscreen
 exec ~/.config/i3/scripts/lockscreen.sh 
@@ -220,12 +223,15 @@ exec ~/.config/i3/scripts/lockscreen.sh
     new_window pixel 0
 
 # Auto-start applications
-exec thunderbird
-exec telegram-desktop
-exec rocketchat-desktop
+#exec thunderbird
+#exec telegram-desktop
+#exec rocketchat-desktop
 #exec riot-desktop
-exec spotify
+#exec spotify
 exec bitwarden-desktop
+
+# notification manager
+exec --no-startup-id dunst
 
 # Workspace assignments
 assign [class="Spotify"] $ws7
