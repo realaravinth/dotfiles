@@ -216,8 +216,6 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
 # start vm
 #exec vboxmanage startvm "windows 10"
 
-# lockscreen
-exec ~/.config/i3/scripts/lockscreen.sh 
 
 # Disable title bar
     new_window pixel 0
@@ -226,12 +224,23 @@ exec ~/.config/i3/scripts/lockscreen.sh
 #exec thunderbird
 #exec telegram-desktop
 #exec rocketchat-desktop
-#exec riot-desktop
+exec riot-desktop
 #exec spotify
 exec bitwarden-desktop
 
 # notification manager
 exec --no-startup-id dunst
+exec --no-startup-id clipmenu
+
+# lockscreen
+#exec  ~/.config/i3/scripts/lockscreen.sh 
+exec slock
+
+# network manager
+exec nm-applet
+
+# Bluetooth
+exec blueman-applet
 
 # Workspace assignments
 assign [class="Spotify"] $ws7

@@ -10,10 +10,13 @@ ln -s ~/dotfiles/.vim ~/.vim &
 ln -s ~/dotfiles/.vimrc ~/.vimrc &
 ln -s ~/dotfiles/.vifm ~/.vifm/ &
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf &
+sudo cp ~/dotfiles/sxiv/imgv.sh /usr/bin/imgv
 rm ~/.zshrc &
 ln -s  ~/dotfiles/.zshrc ~/.zshrc &
 ln -s ~/dotfiles/nvidia-xrun/.nvidia-xinitrc .nvidia-xinitrc &
 ln -s ~/dotfiles/.xinitrc .xinitrc &
+mkdir .config/dunst
+ln -s /home/aravinth/dotfiles/.config/dunst/dunstrc /home/aravinth/.config/dunst/dunstrc
 cd /var/tmp/
 git clone https://aur.archlinux.org/yay.git
 cd yay/

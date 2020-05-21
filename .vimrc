@@ -39,4 +39,6 @@ endif
 set splitright
 set splitbelow
 
+" copy paste wih correct indentation
+set paste
 
