@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://purl.org/rss/1.0/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+xmlns:admin="http://webns.net/mvcb/"
+xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+>
+
+<channel rdf:about="http://distrowatch.com/">
+<title>DistroWatch.com: News</title>
+<link>http://distrowatch.com/</link>
+<description>Latest news on Linux distributions and BSD projects</description>
+
+<dc:language>EN</dc:language>
+<dc:rights>Copyright 2001-2017, DistroWatch.com. All Rights Reserved.</dc:rights>
+
+<dc:date>2020-05-20T01:36:52-00:00</dc:date>
+<dc:publisher>DistroWatch.com</dc:publisher>
+<dc:creator>distro@distrowatch.com</dc:creator>
+<dc:subject>Linux/BSD</dc:subject>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updateBase>2013-01-01T00:00+00:00</syn:updateBase>
+
+<items>
+ <rdf:Seq>
+<rdf:li rdf:resource="http://distrowatch.com/10921"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10920"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10919"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10918"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10917"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10916"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10915"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10914"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10913"></rdf:li>
+<rdf:li rdf:resource="http://distrowatch.com/10912"></rdf:li>
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://distrowatch.com/images/other/dw.png">
+</image>
+<textinput rdf:resource="http://distrowatch.com/table.php">
+</textinput>
+</channel>
+
+<item rdf:about="http://distrowatch.com/10921">
+<title>BSD Release: OpenBSD 6.7</title>
+<link>http://distrowatch.com/10921</link>
+<description> The OpenBSD project produces and operating system which places focus on portability, standardisation, code correctness, proactive security and integrated cryptography. The project's latest release is OpenBSD 6.7 which introduces several new improvements to the cron scheduling daemon, improvements to the web server daemon, and the top command now....</description>
+<dc:date>2020-05-19T15:16:14+00:00</dc:date>
+<slash:section>openbsd</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10920">
+<title>DistroWatch Weekly, Issue 866</title>
+<link>http://distrowatch.com/10920</link>
+<description> This week in DistroWatch Weekly: Review: Fedora 32 WorkstationNews: UBports status report, TrueOS shuts down, an overview of Fedora SilverblueQuestions and answers: Why distros offer custom builds of packagesReleased last week: Proxmox 6.2 "Virtual Environment", Q4OS 3.11, Kali Linux 2020.2Torrent corner: 4MLinux, Android-x86, ArcoLinux, BackBox, Bluestar, Finnix, Kali....</description>
+<dc:date>2020-05-18T00:04:49+00:00</dc:date>
+<slash:section>weekly</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10919">
+<title>Distribution Release: BackBox Linux 7</title>
+<link>http://distrowatch.com/10919</link>
+<description> BackBox Linux is an Ubuntu-based distribution developed to perform penetration tests and security assessments. The distribution's latest release is BackBox 7 which is based on Ubuntu's 20.04 long-term support release. The distribution now features version 5.4 of the Linux kernel and Xfce 4.14. "The BackBox team, ten years....</description>
+<dc:date>2020-05-15T13:03:20+00:00</dc:date>
+<slash:section>backbox</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10918">
+<title>Distribution Release: UBports 16.04 OTA-12</title>
+<link>http://distrowatch.com/10918</link>
+<description> The UBports team has published an update to their mobile operating system. The new version, 16.04 OTA-12 introduces a new version of the Lomiri (formerly Unity8) user interface and Mir now supports working with Wayland clients. "The headline feature of this new release is our import of Canonical's....</description>
+<dc:date>2020-05-14T13:05:59+00:00</dc:date>
+<slash:section>ubports</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10917">
+<title>Distribution Release: Finnix 120</title>
+<link>http://distrowatch.com/10917</link>
+<description> After a 5-year hiatus, the Finnix distribution has come to life once more with a release of version 120. Finnix is a Debian-based live Linux CD made for system administrators and designed to manipulate hard drives and partitions, monitor networks, and rebuild boot records. The new version is....</description>
+<dc:date>2020-05-14T07:11:57+00:00</dc:date>
+<slash:section>finnix</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10916">
+<title>Distribution Release: Kali Linux 2020.2</title>
+<link>http://distrowatch.com/10916</link>
+<description> Kali Linux is a Debian-based distribution with a collection of security and forensics tools. The project's latest release makes it easier for users to access PowerShell, updates themes for KDE Plasma, and the size requirements for the distribution's ARM-build SD cards has been increased from 8GB to 16GB.....</description>
+<dc:date>2020-05-12T21:21:15+00:00</dc:date>
+<slash:section>kali</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10915">
+<title>Distribution Release: Q4OS 3.11</title>
+<link>http://distrowatch.com/10915</link>
+<description> Q4OS is a Debian-based desktop Linux distribution designed to offer classic-style user interface (Trinity) or the more modern Plasma desktop. The project's latest version, Q4OS 3.11, offers several package upgrades and introduces new dedicated installers for the Firefox and Palemoon web browsers. The release announcement offers further details:....</description>
+<dc:date>2020-05-12T17:07:43+00:00</dc:date>
+<slash:section>q4os</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10914">
+<title>Distribution Release: Proxmox 6.2 "Virtual Environment"</title>
+<link>http://distrowatch.com/10914</link>
+<description> Proxmox is a commercial company which offers specialized products based on Debian. The company has launched Proxmox Virtual Environment version 6.2 which is based on Debian 10.4 "Buster". The release announcement covers the highlights of the new version which include updates to the kernel and ZFS support. "We....</description>
+<dc:date>2020-05-12T15:06:37+00:00</dc:date>
+<slash:section>proxmox</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10913">
+<title>DistroWatch Weekly, Issue 865</title>
+<link>http://distrowatch.com/10913</link>
+<description> This week in DistroWatch Weekly: Review: EndeavourOS 2020.04.11News: Ubuntu Studio plans move to KDE Plasma desktop, openSUSE Leap release rescheduled, Gentoo resumes Bugday event, Debian publishes new install mediaQuestions and answers: How to share a terminal sessionReleased last week: Turnkey Linux 16.0, OpenIndiana 2020.04, Tails 4.6Torrent corner: ArchLabs,....</description>
+<dc:date>2020-05-11T00:07:19+00:00</dc:date>
+<slash:section>weekly</slash:section>
+</item>
+
+<item rdf:about="http://distrowatch.com/10912">
+<title>Distribution Release: Zentyal Server 6.2</title>
+<link>http://distrowatch.com/10912</link>
+<description> Zentyal Server is a unified network server that offers easy and efficient computer network administration for small and medium-size businesses. The company's latest release is Zentyal Server 6.2 which is based on Ubuntu 18.04.4, offers several package upgrades, improved DNS management, and updated anti-virus tools. "Important enhancements to....</description>
+<dc:date>2020-05-08T16:54:25+00:00</dc:date>
+<slash:section>zentyal</slash:section>
+</item>
+
+<textinput rdf:about="http://distrowatch.com/table.php">
+<title>Search Distributions</title>
+<description>Search BSD/Linux distributions</description>
+<name>distribution</name>
+<link>http://distrowatch.com/table.php</link>
+</textinput>
+</rdf:RDF>

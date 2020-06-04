@@ -23,6 +23,7 @@ set t_Co=256
 "Airline theme customization
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1 
+"AirlineTheme wombat
 
 " Nerdtree
 map  <C-m> :NERDTree <CR>

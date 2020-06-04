@@ -10,7 +10,8 @@ ln -s ~/dotfiles/.vim ~/.vim &
 ln -s ~/dotfiles/.vimrc ~/.vimrc &
 ln -s ~/dotfiles/.vifm ~/.vifm/ &
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf &
-sudo cp ~/dotfiles/sxiv/imgv.sh /usr/bin/imgv
+sudo cp ~/dotfiles/sxiv/imgv.sh /usr/bin
+sudo cp ~/dotfiles/fctrl /usr/bin
 rm ~/.zshrc &
 ln -s  ~/dotfiles/.zshrc ~/.zshrc &
 ln -s ~/dotfiles/nvidia-xrun/.nvidia-xinitrc .nvidia-xinitrc &
