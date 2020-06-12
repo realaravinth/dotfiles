@@ -20,7 +20,8 @@ help(){
 }
 
 warp(){
-	sudo cpupower frequency-set -g performance	
+	sudo cpupower frequency-set -g performance
+	auto
 }
 
 power_save(){
