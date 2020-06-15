@@ -14,3 +14,4 @@ git clone git@github.com:ycm-core/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --java-completer --go-completer --js-completer
+cd

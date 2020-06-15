@@ -98,21 +98,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]
-then
-    if [ $(xrandr --listmonitors | head -n 1 | cut -d " " -f 2) -eq 1 ]
-    then
-        exec startx
-    else
-        exec nvidia-xrun
-    fi
-fi
-
-
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+
+~/dotfiles/login.sh
+
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
