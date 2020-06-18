@@ -221,7 +221,7 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
     new_window pixel 0
 
 # Auto-start applications
-#exec thunderbird
+exec thunderbird
 #exec telegram-desktop
 #exec rocketchat-desktop
 exec riot-desktop

@@ -1,4 +1,15 @@
-https://www.archlinux.org/feeds/news/ 						Arch
-https://www.archlinux.org/feeds/packages/					Arch
+https://www.archlinux.org/feeds/news/ 						"Arch" "package updates" "news"
+https://www.archlinux.org/feeds/packages/					"Arch" "package updates"
+https://www.archlinux.org/feeds/planet/						"Arch" "Plannet Arch"
 https://distrowatch.com/news/dw.xml							Distro watch news
-https://www.schneier.com/blog/atom.xml						Schneir on Security(Bruce Schneier)
+https://www.schneier.com/blog/atom.xml						"~Schneir on Security(Bruce Schneier)" "tech" "tech" "blog" "internet" "cryptography"
+https://github.com/bitwarden/desktop/releases.atom			"~Bitwarden-desktop releases" "package updates" "AUR"
+https://feeds.bbci.co.uk/news/technology/rss.xml			"news" "BBC" "tech"
+https://feeds.bbci.co.uk/news/world/rss.xml					"news" "BBC" "world"
+https://feeds.bbci.co.uk/news/rss.xml						"news" "BBC"
+https://blog.cloudflare.com/rss/							"tech" "blog" "internet"
+
+https://www.lightbluetouchpaper.org/feed/					"tech" "blog" "internet" "cryptography"
+
+https://freedom-to-tinker.com/feed/rss/						"tech" "blog" "internet" "privacy"
+

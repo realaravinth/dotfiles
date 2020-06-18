@@ -14,6 +14,7 @@ help(){
 		echo "	-a	auto fans  	sets fan speed to auto"
 		echo "	-g	gaming mode	performance governor and full throttle fans"
 		echo "	-s 	status      	displays CPU and fan status"
+		echo "	-ss suspend      	suspends the machine"
     echo "	-h 	help				displays this menu"
     echo 
     echo "Buy me a coffee realaravinth@batsense.net :)"
@@ -66,6 +67,9 @@ then
 elif [ $1 == '-h' ]
 then
 	help
+elif [ $1 == '-ss' ]
+then
+	systemctl suspend
 else
 	echo "Error: $1 is not an option"
 	help

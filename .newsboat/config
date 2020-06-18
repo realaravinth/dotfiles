@@ -46,5 +46,5 @@ bind-key left quit
 
 auto-reload yes
 #browser "/bin/newsboat-browser.sh"
-browser "/bin/firefox"
+browser "/usr/bin/w3m"
 max-items 500

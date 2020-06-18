@@ -13,6 +13,11 @@ git clone https://github.com/realaravinth/dotfiles
 mkdir -p .config/i3/scripts .config/an2linux/ .config/dunst
 cp ~/dotfiles/.config/i3/scripts ~/.config/i3/
 
+# setting up xfce4-terminal
+
+mkdir  -p ~/.config/xfce4/terminal/
+ln -s ~/dotfiles/.config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
+
 # setting up vim
 ln -s ~/dotfiles/.vim ~/.vim &
 ln -s ~/dotfiles/.vimrc ~/.vimrc &

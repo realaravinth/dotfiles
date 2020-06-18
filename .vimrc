@@ -16,9 +16,24 @@ autocmd Filetype css setlocal tabstop=2
 autocmd Filetype html setlocal tabstop=2
 autocmd Filetype sh setlocal tabstop=2
 
-"color scheme
-colorscheme flattened_dark
-set t_Co=256
+"color scheme:
+
+" Solarized dark:
+"colorscheme flattened_dark
+"set t_Co=256
+
+" medic_chalk
+"colorscheme medic_chalk
+
+" archman
+" colorscheme archman
+
+" identity
+colorscheme identity
+
+" moonlight
+" colorscheme moonlight
+
 
 "Airline theme customization
 let g:airline_solarized_bg='dark'
@@ -43,3 +58,6 @@ set splitbelow
 " copy paste wih correct indentation
 set paste
 
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
