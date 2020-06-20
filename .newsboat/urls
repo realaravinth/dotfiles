@@ -1,15 +1,31 @@
+# Arch Linux
 https://www.archlinux.org/feeds/news/ 						"Arch" "package updates" "news"
 https://www.archlinux.org/feeds/packages/					"Arch" "package updates"
 https://www.archlinux.org/feeds/planet/						"Arch" "Plannet Arch"
-https://distrowatch.com/news/dw.xml							Distro watch news
-https://www.schneier.com/blog/atom.xml						"~Schneir on Security(Bruce Schneier)" "tech" "tech" "blog" "internet" "cryptography"
+
+# Package updates for compiled from source/ AUR
 https://github.com/bitwarden/desktop/releases.atom			"~Bitwarden-desktop releases" "package updates" "AUR"
+
+# Linux
+https://distrowatch.com/news/dw.xml							Distro watch news
+
+# Debian News
+https://www.debian.org/security/dsa-long					"security" "Debian security"
+https://bits.debian.org/feeds/feed.rss						"blog"
+
+# Cryptography
+https://www.schneier.com/blog/atom.xml						"~Schneir on Security(Bruce Schneier)" "tech" "tech" "blog" "internet" "cryptography"
+https://www.lightbluetouchpaper.org/feed/					"tech" "blog" "internet" "cryptography"
+
+# General news
 https://feeds.bbci.co.uk/news/technology/rss.xml			"news" "BBC" "tech"
 https://feeds.bbci.co.uk/news/world/rss.xml					"news" "BBC" "world"
 https://feeds.bbci.co.uk/news/rss.xml						"news" "BBC"
+
+# Tech blogs
 https://blog.cloudflare.com/rss/							"tech" "blog" "internet"
-
-https://www.lightbluetouchpaper.org/feed/					"tech" "blog" "internet" "cryptography"
-
 https://freedom-to-tinker.com/feed/rss/						"tech" "blog" "internet" "privacy"
+https://sneak.berlin/feed.xml								"tech" "blog" "internet" "privacy"
 
+# Free software
+http://planet.gnu.org/rss20.xml								"tech" "blog" "privacy"

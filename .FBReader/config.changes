@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <group name="Colors">
+    <option name="Background" value="0" category="ui"/>
+    <option name="Hyperlink" value="4176127" category="ui"/>
+    <option name="SelectedText" value="16711680" category="ui"/>
+    <option name="Text" value="16777122" category="ui"/>
+  </group>
+  <group name="LastState">
+    <option name="Valid" value="true" category="state"/>
+  </group>
+  <group name="LookAndFeelOptionsDialog">
+    <option name="SelectedTab" value="Colors" category="ui"/>
+  </group>
+  <group name="PreferencesDialog">
+    <option name="LastOpened" value="lookAndFeelOptions" category="options"/>
+  </group>
+  <group name="ReadingOptionsDialog">
+    <option name="SelectedTab" value="Keys" category="ui"/>
+    <option name="Width" value="402" category="ui"/>
+  </group>
+  <group name="Style">
+    <option name="Base:fontFamily" value="Nimbus Roman" category="ui"/>
+    <option name="Preformatted text:fontFamily" value="Nimbus Mono PS" category="ui"/>
+  </group>
+</config>

@@ -24,6 +24,10 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc &
 chmod +x ~/dotfiles/download-vim-plugs.sh
 ~/dotfiles/download-vim-plugs.sh
 
+# w3m
+mkdir ~/.w3m
+ln -s ~/dotfiles/.w3m/config ~/.w3m/config
+
 # vifm
 ln -s ~/dotfiles/.vifm ~/.vifm/ &
 
@@ -56,6 +60,10 @@ ln -s ~/dotfiles/.newsboat/config ~/.newsboat/config
 
 # notifications from Android phone
 ln -s ~/dotfiles/.config/an2linux/config ~/.config/an2linux/config
+
+# FBReader - ebook reader
+mkdir ~/.FBReader
+ln -s ~/dotfiles/.FBReader/config.changes ~/.FBReader/config.changes
 
 # installing yay
 cd /var/tmp/
