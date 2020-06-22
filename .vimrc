@@ -29,10 +29,12 @@ autocmd Filetype sh setlocal tabstop=2
 " colorscheme archman
 
 " identity
-colorscheme identity
+"colorscheme identity
 
 " moonlight
 " colorscheme moonlight
+
+colorscheme wombat256grf
 
 
 "Airline theme customization

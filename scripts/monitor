@@ -1,5 +1,6 @@
 #!/bin/bash
 
+CONFIG="./.config/monitor"
 
 help(){
     echo "Usage: monitor [option]"
@@ -9,10 +10,19 @@ help(){
     echo "  extends             left    extends monitor to the left"
     echo "                      right   extends monitor to the right"
     echo "  mirror                      mirrors monitor"
+		echo " 	b										<0-1>		changes brightness"
+		echo "	t										<2000-6000> changes temperature"
     echo "  help                        displays this menu"
     echo 
     echo "Buy me a coffee realaravinth@batsense.net :)"
 }
+
+
+
+if [ ! -d $CONFIG ]
+then
+		mkdir -p $CONFIG
+fi
 
 if [ -z $1 ]
 then
@@ -38,6 +48,25 @@ else
                     help 
                 fi
             fi
+		elif [ $1 == 'b' ]
+		then
+				if [ -z $2 ]
+				then
+						help
+				else
+						xrandr --output eDP-1-1 --brightness $2
+						xrandr --output HDMI-0  --brightness $2
+						redshift -m randr -O $(cat $CONFIG/brightness)
+				fi
+		elif [ $1 == 't' ]
+		then
+				if [ -z $2 ]
+				then
+						help
+				else
+					echo $2 > $CONFIG/brightness
+					redshift -m randr -O $2
+				fi
     else
         echo "Error: $1 is not an option"
         help 

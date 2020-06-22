@@ -37,8 +37,11 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf &
 # sxiv(suckless img viewer)
 sudo cp ~/dotfiles/sxiv/imgv.sh /usr/bin
 
+# monitor - xranr wrapper script
+sudo ln -s ~/dotfiles/scripts/monitor /usr/local/bin/monitor
+
 # launch control(fan and CPU performance)
-sudo cp ~/dotfiles/lctrl /usr/bin
+sudo ln -s ~/dotfiles/scripts/lctrl /usr/local/bin/lctrl
 
 # shell
 rm ~/.zshrc &
