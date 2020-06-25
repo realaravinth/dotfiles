@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# installing bare minimum packages
-sudo pacman -S git curl sudo base-devel
-
 # downloading ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"&
 
