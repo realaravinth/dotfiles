@@ -223,7 +223,6 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
 # Auto-start applications
 exec thunderbird
 #exec telegram-desktop
-#exec rocketchat-desktop
 exec riot-desktop
 #exec spotify
 exec bitwarden-desktop
