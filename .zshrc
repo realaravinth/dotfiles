@@ -108,4 +108,5 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
-
+export ass=samsung-gtel3g
+export PATH=$PATH:~/.local/bin/
