@@ -110,3 +110,4 @@ ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
 export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/
+export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
