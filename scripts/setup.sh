@@ -34,6 +34,10 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf &
 # sxiv(suckless img viewer)
 sudo cp ~/dotfiles/sxiv/imgv.sh /usr/bin
 
+# backup config script
+
+sudo ln -s ~/dotfiles/scripts/bk /usr/local/bin/bk
+
 # monitor - xranr wrapper script
 sudo ln -s ~/dotfiles/scripts/monitor /usr/local/bin/monitor
 
