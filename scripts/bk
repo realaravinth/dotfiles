@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Quick and dirty script to backup a file before editing.
+# I think we've had enought mishaps with broken config files, don't we?
+
+if [ -z $1 ]
+then
+	cat $0 # There's your help menu
+elif [ -z $2 ]
+then
+	cp $1 $(date +"%F_%H-%M")-$1
+else
+	cp $1 $(date +"%F_%H-%M")-$1
+	vim $1
+fi
