@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git rust rustup sudo npm yarn npx cargo fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,3 +112,6 @@ export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias vim="nvim"

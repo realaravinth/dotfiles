@@ -7,7 +7,7 @@
 #Customization values
 set $FONT "ttf-font-awesome"
 set $FONT_SIZE "10"
-set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/arch-darker.png"
+set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/waves.jpg"
 set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
 # i3 config file (v4)
 #
@@ -114,11 +114,10 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: " 
-set $ws10 "10: "
-set $ws11 "11: 󲈳"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9" 
+set $ws10 "10"
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -184,9 +183,10 @@ bindsym $mod+Shift+x  exec ~/.config/i3/scripts/lockscreen.sh
 bindsym $mod+semicolon  exec firefox
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+		
+#}
 #exec --no-startup-id dbus-send \
 #    --session \
 #    --print-reply=literal \
@@ -208,7 +208,7 @@ exec_always redshift -O 4500
 #exec ssh-add .ssh/aravinth
 
 # Setting background
-exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/arch-darker.png
+exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/waves.jpg
 
 # Starting settings-daemon
 exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd 
@@ -223,7 +223,7 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
 # Auto-start applications
 exec thunderbird
 #exec telegram-desktop
-exec riot-desktop
+exec element-desktop
 #exec spotify
 exec bitwarden-desktop
 
@@ -241,6 +241,9 @@ exec nm-applet
 # Bluetooth
 exec blueman-applet
 
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # Workspace assignments
 assign [class="Spotify"] $ws7
 assign [class="spotify"] $ws7
@@ -249,4 +252,56 @@ assign [class="Rocket.Chat"] $ws8
 assign [class="Telegram"] $ws8
 assign [class="Bitwarden"] $ws9
 assign [class="Thunderbird"] $ws10
-assign [class="Virtualbox Manager"] $ws11
+# Set inner/outer gaps
+gaps inner 10
+gaps outer 15
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+# smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

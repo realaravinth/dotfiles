@@ -12,6 +12,7 @@ help(){
     echo "  mirror                      mirrors monitor"
 		echo " 	b										<0-1>		changes brightness"
 		echo "	t										<2000-6000> changes temperature"
+	echo "monitor		focus			toggles laptop display on and off"
     echo "  help                        displays this menu"
     echo 
     echo "Buy me a coffee realaravinth@batsense.net :)"
@@ -67,6 +68,22 @@ else
 					echo $2 > $CONFIG/brightness
 					redshift -m randr -O $2
 				fi
+	elif [ $1 == 'focus' ]
+	then
+			if [ -z $2 ]
+			then help
+			else
+				if [ $2 == "off" ]
+				then
+					xrandr --output eDP-1-1 --off
+				elif [ $2 == "on" ]
+				then
+					xrandr --output eDP-1-1 --auto
+					monitor extends right
+				else
+					help
+				fi
+			fi
     else
         echo "Error: $1 is not an option"
         help 
