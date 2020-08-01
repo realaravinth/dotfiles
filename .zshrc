@@ -115,3 +115,4 @@ export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
+alias firefox='firefox-developer-edition'
