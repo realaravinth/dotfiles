@@ -38,12 +38,41 @@ Plug 'mattn/emmet-vim'
 "Plug 'fatih/vim-go'
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
-Plug 'mhartington/nvim-typescript'
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
-
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'ianks/vim-tsx'
+Plug 'dense-analysis/ale'
 " Markdown renderer:
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+"prettier config
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
+" Ale
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint'],
+\}
+
+let g:ale_fixers = {
+\    'javascript': ['eslint'],
+\    'typescript': ['prettier'],
+\    'scss': ['prettier'],
+\    'html': ['prettier']
+\}
+let g:ale_fix_on_save = 1
+
+
+"coc config
+let g:coc_global_extensions = [
+	\'coc-emmet',
+	\ 'coc-css', 
+	\ 'coc-html',
+	\ 'coc-json',
+	\ 'coc-prettier',
+	\ 'coc-tsserver']
 
 " Colorscheme
 Plug 'junk-e/identity.vim'
@@ -75,8 +104,9 @@ hi Normal ctermbg=NONE
 
 " Plugin settings
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,javascript.jsx,javascript EmmetInstall
 let g:user_emmet_leader_key=','
+let g:user_emmet_settings={'javascript.jsx': {'extends':'jsx'}}
 
 let g:secure_modelines_allowed_items = [
                 \ "textwidth",   "tw",
