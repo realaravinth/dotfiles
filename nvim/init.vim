@@ -44,8 +44,31 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'ianks/vim-tsx'
 Plug 'dense-analysis/ale'
+Plug 'davidhalter/jedi-vim'
 " Markdown renderer:
+"
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+" async linting
+Plug 'neomake/neomake'
+Plug 'vim-syntastic/syntastic'
+" autosave on write 
+Plug '907th/vim-auto-save' 
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ }
 
 "prettier config
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
@@ -54,7 +77,21 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tsserver', 'tslint'],
+\   'rust': ['analyzer', 'cargo', 'rls', 'rustc'],
 \}
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
+
+" Check Python files with flake8 and pylint.
+let b:ale_linters = ['flake8', 'pylint']
+
 
 let g:ale_fixers = {
 \    'javascript': ['eslint'],
@@ -64,7 +101,9 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
-
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_change = 1
+let g:ale_lint_on_enter = 1
 "coc config
 let g:coc_global_extensions = [
 	\'coc-emmet',
@@ -155,7 +194,7 @@ let javaScript_fold=0
 let java_ignore_javadoc=1
 
 " Open hotkeys
-map <C-p> :Files<CR>
+map <C-p> :FZF<CR>
 nmap <leader>; :Buffers<CR>
 
 " Quick-save
@@ -171,7 +210,7 @@ let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 let g:racer_cmd = "/usr/bin/racer"
-"let g:racer_experimental_completer = 1
+let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " Completion

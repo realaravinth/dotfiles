@@ -1,5 +1,6 @@
 {
   "rust-analyzer.cargo-watch.enable": true,
   "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
-  "tsserver.npm": "/usr/bin/npm"
+  "tsserver.npm": "/usr/bin/npm",
+  "rust.build_on_save": false
 }

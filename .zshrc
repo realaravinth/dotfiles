@@ -15,7 +15,6 @@ ZSH_THEME="robbyrussell"
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -68,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rust rustup sudo npm yarn npx cargo fzf)
+plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,17 +76,17 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+ export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -95,8 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshconfig="mate ~/.zshrc"
+ alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ~/dotfiles/scripts/login.sh
 
@@ -109,10 +108,23 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
 export ass=samsung-gtel3g
-export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/
+export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
 alias firefox='firefox-developer-edition'
+alias listen='tshark -i wlp0s20f3 -w /tmp/testing.pcapng'
+alias upload="getq.sh"
+alias cpd="copydir"
+
+fzf-history-widget-accept() {
+  fzf-history-widget
+  zle accept-line
+}
+zle     -N     fzf-history-widget-accept
+bindkey '^X^R' fzf-history-widget-accept
+
+alias ws="web_search duckduckgo"
+alias crs="ws \!crates"

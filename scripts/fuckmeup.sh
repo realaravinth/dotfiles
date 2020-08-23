@@ -2,9 +2,9 @@
 
 fuckmeup () {
 	v4l2-ctl --list-devices -d /dev/video0 --list-ctrls > ~/.config/current-webcam-settings
-	v4l2-ctl --list-devices -d /dev/video0 --set-ctrl contrast=100
+	v4l2-ctl --list-devices -d /dev/video0 --set-ctrl contrast=80
 	v4l2-ctl --list-devices -d /dev/video0 --set-ctrl sharpness=0
-	v4l2-ctl --list-devices -d /dev/video0 --set-ctrl brightness=-64
+	#v4l2-ctl --list-devices -d /dev/video0 --set-ctrl brightness=0
 }
 
 restore () {

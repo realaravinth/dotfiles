@@ -256,7 +256,7 @@ assign [class="Telegram"] $ws8
 assign [class="Bitwarden"] $ws9
 assign [class="Thunderbird"] $ws10
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 30
 gaps outer 15
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
