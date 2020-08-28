@@ -126,5 +126,16 @@ fzf-history-widget-accept() {
 zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
 
+source ~/dotfiles/.env/bw
+
 alias ws="web_search duckduckgo"
 alias crs="ws \!crates"
+alias aur="ws \!aur"
+alias awiki="ws \!archwiki"
+alias rstd="ws \!rustd"
+alias drs="ws \!drs"
+alias github="firefox https://github.com/realaravinth"
+
+alias cac="cargo c"
+alias cr="cargo r"
+#eval "$(starship init zsh)"

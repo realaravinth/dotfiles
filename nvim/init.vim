@@ -63,11 +63,10 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 
 "prettier config
@@ -77,7 +76,7 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tsserver', 'tslint'],
-\   'rust': ['analyzer', 'cargo', 'rls', 'rustc'],
+\   'rust': ['analyzer', 'rls', 'rustc'],
 \}
 
 "set statusline+=%#warningmsg#
