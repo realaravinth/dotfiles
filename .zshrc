@@ -138,6 +138,6 @@ alias github="firefox https://github.com/realaravinth"
 
 alias cac="cargo c"
 alias cr="cargo r"
-
+alias ct="cargo t"
 alias cat="bat"
 #eval "$(starship init zsh)"
