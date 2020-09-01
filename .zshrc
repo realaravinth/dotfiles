@@ -134,10 +134,14 @@ alias aur="ws \!aur"
 alias awiki="ws \!archwiki"
 alias rstd="ws \!rustd"
 alias drs="ws \!drs"
-alias github="firefox https://github.com/realaravinth"
+alias gh="firefox https://github.com/realaravinth"
 
 alias cac="cargo c"
 alias cr="cargo r"
 alias ct="cargo t"
 alias cat="bat"
+alias tt="feh -F ~/Downloads/tt.png"
+
+
+
 #eval "$(starship init zsh)"
