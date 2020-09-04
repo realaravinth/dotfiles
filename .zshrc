@@ -141,6 +141,7 @@ alias cr="cargo r"
 alias ct="cargo t"
 alias cat="bat"
 alias tt="feh -F ~/Downloads/tt.png"
+alias p="powerpill"
 
 
 
