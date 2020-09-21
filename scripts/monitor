@@ -19,6 +19,9 @@ help(){
 }
 
 
+reload() {
+	i3 restart
+}
 
 if [ ! -d $CONFIG ]
 then
@@ -32,6 +35,7 @@ else
     if [ $1 == 'mirror' ]
     then
         xrandr --output HDMI-0 --mode 1920x1080 --same-as eDP-1-1
+		reload
     elif [ $1 == 'extends' ]
         then
             if [ -z $2 ]
@@ -41,9 +45,11 @@ else
                 if [ $2 == right ]
                 then
                     xrandr --output HDMI-0 --auto --right-of eDP-1-1
+					reload
                 elif [ $2 == 'left' ]
                 then
                     xrandr --output HDMI-0 --auto --left-of eDP-1-1
+					reload
                 else
                     echo "Error: $2 is not an option"
                     help 
@@ -58,6 +64,7 @@ else
 						xrandr --output eDP-1-1 --brightness $2
 						xrandr --output HDMI-0  --brightness $2
 						redshift -m randr -O $(cat $CONFIG/brightness)
+						reload
 				fi
 		elif [ $1 == 't' ]
 		then
@@ -67,19 +74,22 @@ else
 				else
 					echo $2 > $CONFIG/brightness
 					redshift -m randr -O $2
+					reload
 				fi
 	elif [ $1 == 'focus' ]
 	then
 			if [ -z $2 ]
 			then help
 			else
-				if [ $2 == "off" ]
+				if [ $2 == "on" ]
 				then
 					xrandr --output eDP-1-1 --off
-				elif [ $2 == "on" ]
+					reload
+				elif [ $2 == "off" ]
 				then
 					xrandr --output eDP-1-1 --auto
 					monitor extends right
+					reload
 				else
 					help
 				fi

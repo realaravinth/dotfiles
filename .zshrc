@@ -108,14 +108,14 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
 export ass=samsung-gtel3g
-export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin
+export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
 alias firefox='firefox-developer-edition'
-alias listen='tshark -i wlp0s20f3 -w /tmp/testing.pcapng'
+alias listen='tshark -i enp8s0 -w /tmp/testing.pcapng'
 alias upload="getq.sh"
 alias cpd="copydir"
 
@@ -127,6 +127,8 @@ zle     -N     fzf-history-widget-accept
 bindkey '^X^R' fzf-history-widget-accept
 
 source ~/dotfiles/.env/bw
+
+alias rm="/usr/bin/safe-rm"
 
 alias ws="web_search duckduckgo"
 alias crs="ws \!crates"
