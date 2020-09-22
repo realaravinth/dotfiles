@@ -1,8 +1,11 @@
 [user]
 	name = realaravinth
 	email = realaravinth@batsense.net
+	signingkey = EDF03B2CE41B5836BE35BA3BAD9F0F08E855ED88
 [core]
 	editor = nvim
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[commit]
+	gpgsign = true
