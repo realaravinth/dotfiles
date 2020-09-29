@@ -67,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search)
+plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,6 +145,7 @@ alias cat="bat"
 alias tt="feh -F ~/Downloads/tt.png"
 alias p="powerpill"
 
-
+export BOOKS=~/Syncthing/Books
 
 #eval "$(starship init zsh)"
+alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
