@@ -149,3 +149,7 @@ export BOOKS=~/Syncthing/Books
 
 #eval "$(starship init zsh)"
 alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
+
+
+# React helper:
+source ~/dotfiles/scripts/react/helper.sh
