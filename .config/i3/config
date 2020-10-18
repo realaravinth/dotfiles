@@ -8,7 +8,9 @@
 set $FONT "ttf-font-awesome"
 set $FONT_SIZE "10"
 set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/waves.jpg"
-set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
+set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/waves.jpg"
+#"/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
+#
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -216,7 +218,7 @@ bindsym $mod+c exec ~/dotfiles/scripts/bw.sh
 #exec ssh-add .ssh/aravinth
 
 # Setting background
-exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/dark-orange.jpg
+exec --no-startup-id feh --bg-scale  Pictures/Wallpapers/mountains_sunset_lake_133861_1920x1080.jpg
 
 # Compositor
 exec --no-startup-id compton

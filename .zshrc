@@ -108,7 +108,7 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
 export ass=samsung-gtel3g
-export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/
+export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/*/bin/
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 

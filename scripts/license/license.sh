@@ -41,17 +41,18 @@ root_dir=$(git rev-parse --show-toplevel)
 
 # $1 is the preferred filetype
 run(){
-	if [ $1 == 'rs' ]
+	if [ $1 == 'rs' ] || [ $1 == 'js' ] || [ $1 == 'ts' ] || [ $1 == 'jsx'] || [ $1 == 'tsx' ] || [ $1 == 'c' ]
 	then
 		licence=$rust_licence
 	fi
+
 	for file in $( git ls-files)
 	do
 		if [ $(filetype $file) == $1 ]
 		then
-			upgrade_licence $root_dir/$file $licence
+			upgrade_licence $root_dir/$file $licence &
 		fi
-	done
+	done &
 
 }
 

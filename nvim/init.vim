@@ -60,6 +60,12 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+"prettier-vim
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x',
+  \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
+  \ }
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -71,6 +77,10 @@ let g:LanguageClient_serverCommands = {
 
 "prettier config
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
+"vim-prettier config
+map <C-s> :Prettier<CR>
+
 
 " Ale
 let g:ale_linters = {

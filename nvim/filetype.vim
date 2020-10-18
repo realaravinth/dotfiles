@@ -22,6 +22,11 @@ augroup filetypedetect
   autocmd Filetype tex let g:deoplete#enable_at_startup = 0
   autocmd Filetype text let g:deoplete#enable_at_startup = 0
   autocmd Filetype markdown let g:deoplete#enable_at_startup = 0
+  autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
   " clang format
   autocmd FileType c,cpp ClangFormatAutoEnable
 augroup END
