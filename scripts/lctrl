@@ -14,6 +14,7 @@ help(){
 		echo "	-a	auto fans  	sets fan speed to auto"
 		echo "	-g	gaming mode	performance governor and full throttle fans"
 		echo "	-s 	status      	displays CPU and fan status"
+		echo "	-t 	touchpad      	enables touchpad"
 		echo "	-ss suspend      	suspends the machine"
     echo "	-h 	help				displays this menu"
     echo 

@@ -235,8 +235,10 @@ exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd
 
 # Auto-start applications
 exec thunderbird
-#exec telegram-desktop
+exec telegram-desktop
 exec element-desktop
+exec discord
+exec Gitter
 #exec spotify
 #exec bitwarden-desktop
 exec rsibreak
@@ -264,6 +266,8 @@ assign [class="Spotify"] $ws7
 assign [class="spotify"] $ws7
 assign [class="element"] $ws8
 assign [class="Element"] $ws8
+assign [class="discord"] $ws8
+assign [class="Gitter"] $ws8
 assign [class="Rocket.Chat"] $ws8
 assign [class="Telegram"] $ws8
 assign [class="Bitwarden"] $ws9
