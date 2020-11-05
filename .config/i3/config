@@ -226,6 +226,10 @@ exec --no-startup-id compton
 # Starting settings-daemon
 exec --no-startup-id exec xsettingsd --config=/home/aravinth/.xsettingsd 
 
+# Enabling touchpad click-on-touch
+exec --no-startup-id /home/aravinth/dotfiles/scripts/lctrl -t
+
+
 # start vm
 #exec vboxmanage startvm "windows 10"
 
