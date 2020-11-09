@@ -142,7 +142,7 @@ alias cac="cargo c"
 alias cr="cargo r"
 alias ct="cargo t"
 alias cat="bat"
-alias tt="feh -F ~/Downloads/tt.png"
+alias tt="feh -F ~/Pictures/tt.png"
 alias p="powerpill"
 
 export BOOKS=~/Syncthing/Books
