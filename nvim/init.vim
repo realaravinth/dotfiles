@@ -87,6 +87,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tsserver', 'tslint'],
 \   'rust': ['analyzer', 'rls', 'rustc'],
+\   'java': ['/usr/bin/jdtls', '-data', 'getcwd()'],
 \}
 
 "set statusline+=%#warningmsg#
