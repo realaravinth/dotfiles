@@ -20,13 +20,10 @@ create_file() {
 	do
 		if [ $(filetype $file) == "java" ]
 		then
-			echo "java file"
 			echo "### $file" >> $FILENAME
-			echo "\`\`\`java $(cat $file)" >> $FILENAME
+			echo "\`\`\`java" >> $FILENAME
+			cat $file >> $FILENAME
 			echo "\`\`\`" >> $FILENAME
-			echo "\`\`\`bash" >> $FILENAME
-			echo "\`\`\`" >> $FILENAME
-
 		fi
 	done
 }
