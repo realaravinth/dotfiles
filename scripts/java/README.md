@@ -23,9 +23,20 @@ init.sh <filename> <package-name(optional)>
 
 when package name is not specified, current directory name is assumed to be the package name
 
-## [gen_markdown.sh](./gen_markdown.sh):
+## [gen_payload.sh](./gen_payload.sh):
 
-Generates Markdown file with the contents of all Java source files
+Generates Markdown and PDF file with the contents of all Java source files.
+
+The script compiles all source files and runs the program that contains
+the main function to generate output.
+
+**NOTE: Please verify the contents of the PDF file before submitting.**
+
+#### Dependencies:
+
+- [pandoc](pandoc.org)
+
+
 
 #### Configuration:
 
@@ -39,31 +50,6 @@ REG_NO="19BCE7415"
 #### Usage:
 
 ```
-gen_marksown.sh
-gen_marksown.sh -h to display help
-```
-
-This generates a markdown file in the package root. Near the end of the
-file, you'll find:
-```
-### Output
-```bash
-```
-
-Please compile and run your program and paste the output into the
-markdown file before running [gen_pdf](./gen_pdf.sh).
-
-## [gen_pdf](./gen_pdf.sh):
-
-Generates PDF files from all markdown files in current directory
-
-#### Dependencies:
-
-- [pandoc](pandoc.org)
-
-##### Usage:
-
-```
-gen_pdf.sh
-gen_pdf.sh -h to display this help
+gen_payload.sh
+gen_payload.sh -h to display help
 ```
