@@ -1,10 +1,10 @@
 #!/bin/bash
 
+COPYRIGHT="// (c) Aravinth T.M <aravinth.19bce7415@vitap.ac.in>"
+
 PKG=$(pwd | rev | cut -d "/" -f 1 | rev)
 CLASS=""
-FILENAME_BOILERPATE="// File name : Cylinder.java"
 FILENAME=""
-COPYRIGHT="// (c) Aravinth T.M <aravinth.19bce7415@vitap.ac.in>"
 
 help(){
 	echo "Generates boilerplate code for java classes"
@@ -13,8 +13,10 @@ help(){
 	echo "when package name is not specified, current directory name is assumed to be the package name"
 }
 
+
 create_file() {
 	touch $FILENAME
+	FILENAME_BOILERPATE="// File name : $CLASS.java"
 	echo "package $PKG;"  > $FILENAME
 	echo $FILENAME_BOILERPATE $CLASS >> $FILENAME
 	echo $COPYRIGHT >> $FILENAME
