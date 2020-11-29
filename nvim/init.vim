@@ -45,9 +45,20 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'ianks/vim-tsx'
 Plug 'dense-analysis/ale'
 Plug 'davidhalter/jedi-vim'
+
+" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+
 " Markdown renderer:
-"
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+" Live server
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 " async linting
 Plug 'neomake/neomake'
@@ -646,3 +657,10 @@ let g:mkdp_page_title = '「${name}」'
 " VIM rooter
 let g:rooter_targets = '/,*'
 
+" Snippets config
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<C-x>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"

@@ -50,6 +50,13 @@ REG_NO="19BCE7415"
 #### Usage:
 
 ```
+Generates Markdown file and PDF with the contents of all java source files
+
+with no arguments, compilation and pdf generation are automatically done:
 gen_payload.sh
-gen_payload.sh -h to display help
+
+gen_payload.sh  -c   --compile   compile package
+gen_payload.sh  -m   --markdown   generate markdown
+gen_payload.sh  -p   --pdf   generate pdf
+gen_payload.sh  -h   --helt   display this help
 ```

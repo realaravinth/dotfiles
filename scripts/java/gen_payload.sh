@@ -9,8 +9,14 @@ FILENAME="$(pwd)/$PKG-$REG_NO.md"
 help(){
 	echo "Generates Markdown file and PDF with the contents of all java source files"
 	echo "Usage: "
+
+	echo "with no arguments, compilation and pdf generation are automatically done:"
 	echo "gen_payload.sh"
-	echo "gen_payload.sh -h to display this help"
+	echo ""
+	echo "gen_payload.sh  -c   --compile   compile package"
+	echo "gen_payload.sh  -m   --markdown   generate markdown"
+	echo "gen_payload.sh  -p   --pdf   generate pdf"
+	echo "gen_payload.sh  -h   --helt   display this help"
 }
 
 filetype() {
@@ -70,19 +76,27 @@ create_pdf() {
 	done
 }
 
-
-
-if [ $1 == "-h" ] || [ $1 == "--help" ]
-then
-	help
-fi
-
 compile() {
 	javac -Xlint:unchecked    -d . *.java
 }
 
-
-
-compile
-create_file
-create_pdf
+if [ $1 == "-h" ] || [ $1 == "--help" ]
+then
+	help
+elif [ $1 == '-p' ] || [ $1 == "--pdf" ]
+then
+	echo "generating pdf"
+	create_pdf
+elif [ $1 == "-m" ] || [ $1 == "--markdown" ]
+then
+	echo "generating markdown"
+	create_file
+elif [ $1 == "-c" ] || [ $1 == "--compile" ]
+then
+	echo "compiling"
+	compile
+else
+	compile
+	create_file
+	create_pdf
+fi

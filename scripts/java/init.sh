@@ -16,7 +16,7 @@ help(){
 
 create_file() {
 	touch $FILENAME
-	FILENAME_BOILERPATE="// File name : $CLASS.java"
+	FILENAME_BOILERPATE="// File name : "
 	echo "package $PKG;"  > $FILENAME
 	echo $FILENAME_BOILERPATE $CLASS >> $FILENAME
 	echo $COPYRIGHT >> $FILENAME

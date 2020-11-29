@@ -153,3 +153,9 @@ alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
 
 # React helper:
 source ~/dotfiles/scripts/react/helper.sh
+alias cdt="cd /tmp/"
+save() {
+	URL="https://web.archive.org/save/$1"
+	echo "Saving $URL"
+	curl $URL
+}
