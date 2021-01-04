@@ -138,7 +138,11 @@ let g:coc_global_extensions = [
 " Colorscheme
 Plug 'junk-e/identity.vim'
 Plug 'gryf/wombat256grf'
+Plug 'lervag/vimtex'
+Plug 'Kogia-sima/sailfish', { 'rtp': 'syntax/vim' }
+
 call plug#end()
+
 
 if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor

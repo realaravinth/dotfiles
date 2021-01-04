@@ -28,7 +28,9 @@ warp(){
 
 touchpad_preferences(){
 	id=$(xinput list | grep Touchpad | cut -d "=" -f 2 | cut -d "[" -f 1)
+	echo "ID: $id"
 	xinput set-prop $id 342 1
+	xinput set-prop $id 340 1
 }
 
 power_save(){

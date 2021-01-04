@@ -109,6 +109,7 @@ ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
 
 export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/*/bin/
+export PATH=$PATH:~/workspace/fabric/bin
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
@@ -140,8 +141,11 @@ alias gh="firefox https://github.com/realaravinth"
 
 alias cac="cargo c"
 alias cr="cargo r"
+alias crr="cargo r --release"
 alias ct="cargo t"
-alias cat="bat"
+alias ctr="cargo t --release"
+alias cat="/usr/bin/bat"
+alias bat="/usr/bin/cat"
 alias tt="feh -F ~/Pictures/tt.png"
 alias p="powerpill"
 
@@ -159,3 +163,13 @@ save() {
 	echo "Saving $URL"
 	curl $URL
 }
+
+alias gg="gotify push"
+alias ff="find $(pwd) | rg "
+
+# tex stuff
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
+# bluetooth headset conn
+alias ble="bluetoothctl connect 38:18:4C:11:C7:63 | tail -n 1 | grep 'Connection successful'"
+alias dn="dnote"

@@ -27,6 +27,7 @@ augroup filetypedetect
   autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType stpl setlocal shiftwidth=2 softtabstop=2 expandtab
   " clang format
   autocmd FileType c,cpp ClangFormatAutoEnable
 augroup END

@@ -37,6 +37,11 @@ else
     then
         xrandr --output HDMI-0 --mode 1920x1080 --same-as eDP-1-1
 		reload
+	elif [ $1 == 'rotate' ]
+    then
+		xrandr --output HDMI-0 --rotate right
+		reload
+
     elif [ $1 == 'extends' ]
         then
             if [ -z $2 ]

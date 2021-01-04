@@ -1,0 +1,252 @@
+;font-0 = "Noto Sans Mono:size=10;1"
+;font-1 = "Noto Sans Mono:size=10;1"
+;font-2 = Font Awesome 5 Free Solid:pixelsize=10;3
+;font-3 = Font Awesome 5 Brands:pixelsize=10;3
+
+
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #888
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/main]
+monitor = HDMI-0
+modules-left = i3 xwindow
+modules-right = wlan
+;modules-center = date 
+width = 100%
+height = 1.4%
+radius = 6.0
+fixed-center = false 
+bottom = true
+font-0 = "Noto Sans Mono:size=10;1"
+font-1 = "Noto Sans Mono:size=10;1"
+font-2 = "Noto Sans Symbols:size=10;1"
+font-3 = "Noto Sans Symbols2:size=10;1"
+font-4 = "Font Awesome 5 Free Solid:pixelsize=10;3"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;3"
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+
+[bar/laptop]
+monitor = eDP-1-1
+modules-left = i3 xwindow 
+modules-center = date 
+width = 100%
+height = 2.5%
+radius = 6.0
+fixed-center = true
+bottom = true
+
+tray-position = right
+tray-padding = 2
+tray-maxsize = 24
+
+font-0 = "Noto Sans Mono:size=10;1"
+font-1 = "Noto Sans Mono:size=10;1"
+font-2 = "Noto Sans Symbols:size=10;1"
+font-3 = "Noto Sans Symbols2:size=10;1"
+;font-4 = "Source Code Pro:style=regular"
+font-4 = "Font Awesome 5 Free Solid:pixelsize=10;3"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;3"
+
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = true
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+; additional formatting
+; ws-icon-[0-9]+ = <label>;<icon>
+; NOTE: The <label> needs to match the name of the i3 workspace
+; Neither <label> nor <icon> can contain a semicolon (;)
+
+ws-icon-0 = 0;
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
+ws-icon-9 = 9;
+
+
+;; With Icons
+
+;;ws-icon-0 = 0;
+;;ws-icon-1 = 1;
+;;ws-icon-2 = 2;
+;;ws-icon-3 = 3;
+;;ws-icon-4 = 4;
+;;ws-icon-5 = 5;
+;;ws-icon-6 = 6;
+;;ws-icon-7 = 7;
+;;ws-icon-8 = 8;
+;;ws-icon-9 = 9;
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+; NOTE: Icon will be available as the %icon% token inside label-*
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index% %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index% %icon%
+label-unfocused-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index% %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
+  
+
+[global/wm]
+margin-top = 0
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %d"
+date-alt = %a %b %d
+
+time = %I:%M
+time-alt = %I:%M%p
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "💻 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "🗍 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used:2%%
+
+[module/wlan]
+type = internal/network
+interface = wlp0s20f3
+interval = 5.0
+format-connected = <label-connected>
+format-connected-prefix = "🖧 "
+format-connected-underline = #9f78e1
+label-connected = %essid%
+label-disconnected =
+

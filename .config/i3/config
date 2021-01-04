@@ -7,8 +7,8 @@
 #Customization values
 set $FONT "ttf-font-awesome"
 set $FONT_SIZE "10"
-set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/rise-against-party-high-contrast.jpg"
-set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/waves.jpg"
+set $WALLPAPER "/home/aravinth/Pictures/Wallpapers/nyc-dawn.jpg"
+set $WALLPAPER_LOCKSCREEN "/home/aravinth/Pictures/Wallpapers/stary-sky.jpg"
 #"/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
 #
 # i3 config file (v4)
@@ -198,11 +198,11 @@ bindsym $mod+c exec ~/dotfiles/scripts/bw.sh
 # finds out, if available)
 #bar {
 #        status_command i3status
-		
+#   	
 #}
 #exec --no-startup-id dbus-send \
 #    --session \
-#    --print-reply=literal \
+#mut     --print-reply=literal \
 #    --dest=org.gnome.SessionManager \
 #    "/org/gnome/SessionManager" \
 #    org.gnome.SessionManager.RegisterClient \
@@ -218,7 +218,7 @@ bindsym $mod+c exec ~/dotfiles/scripts/bw.sh
 #exec ssh-add .ssh/aravinth
 
 # Setting background
-exec --no-startup-id feh --bg-scale  $WALLPAPER
+exec_always --no-startup-id feh --bg-scale  $WALLPAPER
 
 # Compositor
 exec --no-startup-id compton
@@ -263,7 +263,11 @@ exec nm-applet
 exec blueman-applet
 
 # Polybar
+#
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# monitor rotation
+exec_always --no-startup-id xrandr --output HDMI-0 --rotate right
 
 # Workspace assignments
 assign [class="Spotify"] $ws7
