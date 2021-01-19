@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/aravinth/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,10 +12,9 @@ ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -64,11 +63,11 @@ ZSH_THEME="robbyrussell"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,17 +76,17 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+ export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -95,6 +94,40 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export PS1="($(hostname))"$PS1
+ alias zshconfig="mate ~/.zshrc"
+ alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+fzf-history-widget-accept() {
+  fzf-history-widget
+  zle accept-line
+}
+zle     -N     fzf-history-widget-accept
+bindkey '^X^R' fzf-history-widget-accept
+
+alias ws="web_search duckduckgo"
+alias crs="ws \!crates"
+alias aur="ws \!aur"
+alias awiki="ws \!archwiki"
+alias rstd="ws \!rustd"
+alias drs="ws \!drs"
+alias gh="firefox https://github.com/realaravinth"
+
+alias cac="cargo c"
+alias cr="cargo r"
+alias crr="cargo r --release"
+alias ct="cargo t"
+alias cb="cargo b"
+alias ccd="cargo doc"
+alias ctr="cargo t --release"
+alias cat="/usr/bin/bat"
+alias bat="/usr/bin/cat"
+alias tt="feh -F ~/Pictures/tt.png"
+alias p="powerpill"
+
+#eval "$(starship init zsh)"
+alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
+
+
+alias ff="find . | rg "

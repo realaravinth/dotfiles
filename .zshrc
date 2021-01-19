@@ -115,7 +115,7 @@ export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
-alias firefox='firefox-developer-edition'
+#alias firefox='firefox-developer-edition'
 alias listen='tshark -i enp8s0 -w /tmp/testing.pcapng'
 alias upload="getq.sh"
 alias cpd="copydir"
@@ -143,6 +143,8 @@ alias cac="cargo c"
 alias cr="cargo r"
 alias crr="cargo r --release"
 alias ct="cargo t"
+alias cb="cargo b"
+alias ccd="cargo doc"
 alias ctr="cargo t --release"
 alias cat="/usr/bin/bat"
 alias bat="/usr/bin/cat"
