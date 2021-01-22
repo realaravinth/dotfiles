@@ -175,3 +175,4 @@ alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 # bluetooth headset conn
 alias ble="bluetoothctl connect 38:18:4C:11:C7:63 | tail -n 1 | grep 'Connection successful'"
 alias dn="dnote"
+alias loc="tokei"
