@@ -149,6 +149,7 @@ alias ctr="cargo t --release"
 alias cat="/usr/bin/bat"
 alias bat="/usr/bin/cat"
 alias tt="feh -F ~/Pictures/tt.png"
+alias ttt="feh -F ~/Pictures/ttt.jpg"
 alias p="powerpill"
 
 export BOOKS=~/Syncthing/Books

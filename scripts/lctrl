@@ -1,24 +1,51 @@
 #!/bin/bash
+# help(){
+# 	echo "Launch control: Wrapper scripts to alter performance"
+#     echo "Usage: lctrl [option]"
+#     echo
+#     echo "requires"
+# 	echo "[*] nbfc installed and configured for fan speed control"
+# 	echo "[*] cpupower installed for CPU governor settings"
+# 	echo "Check https://aur.archlinux.org/packages/nbfc/ or https://github.com/hirschmann/nbfc"
+# 	echo "note to self: use Acer Predator G3-572 profile"
+# 	echo ""
+#     echo "	-w	       warp speed	  sets CPU governor to performance"
+#     echo "	-p	       power save	  sets CPU governor to powersave"
+# 	echo "	-a	       auto fans  	  sets fan speed to auto"
+# 	echo "	-g	       gaming mode	  performance governor and full throttle fans"
+# 	echo "	-f <0-100> set fans	sets  fan speed to specified rate"
+# 	echo "	-s 	       status      	  displays CPU and fan status"
+# 	echo "	-t 	       touchpad       enables touchpad"
+# 	echo "	-ss        suspend        suspends the machine"
+#     echo "	-h         help			  displays this menu"
+#     echo 
+#     echo "Buy me a coffee realaravinth@batsense.net :)"
+# }
+
 help(){
-	echo "Launch control: Wrapper scripts to alter performance"
-    echo "Usage: lctrl [option]"
-    echo
-    echo "requires"
-		echo "[*] nbfc installed and configured for fan speed control"
-		echo "[*] cpupower installed for CPU governor settings"
-		echo "Check https://aur.archlinux.org/packages/nbfc/ or https://github.com/hirschmann/nbfc"
-		echo "note to self: use Acer Predator G3-572 profile"
-		echo ""
-    echo "	-w  warp speed	sets CPU governor to performance"
-    echo "	-p	power save	sets CPU governor to powersave"
-		echo "	-a	auto fans  	sets fan speed to auto"
-		echo "	-g	gaming mode	performance governor and full throttle fans"
-		echo "	-s 	status      	displays CPU and fan status"
-		echo "	-t 	touchpad      	enables touchpad"
-		echo "	-ss suspend      	suspends the machine"
-    echo "	-h 	help				displays this menu"
-    echo 
-    echo "Buy me a coffee realaravinth@batsense.net :)"
+	cat << EOF
+Launch control: Wrapper scripts to alter performance
+Usage: lctrl [option]
+
+requires
+[*] nbfc installed and configured for fan speed control
+[*] cpupower installed for CPU governor settings
+Check https://aur.archlinux.org/packages/nbfc/ or https://github.com/hirschmann/nbfc
+note to self: use Acer Predator G3-572 profile
+
+	-w         warp speed	  sets CPU governor to performance
+	-p         power save	  sets CPU governor to powersave
+	-a         auto fans  	  sets fan speed to auto
+	-g         gaming mode	  performance governor and full throttle fans
+	-f <0-100> set fans	sets  fan speed to specified rate
+	-s         status      	  displays CPU and fan status
+	-t         touchpad       enables touchpad
+	-ss        suspend        suspends the machine
+	-h         help           displays this menu
+
+Buy me a coffee realaravinth@batsense.net :)
+
+EOF
 }
 
 warp(){
@@ -38,12 +65,15 @@ power_save(){
 	auto
 }
 
-gaming(){
-	warp
-	nbfc set -f 1 -s 100
-	nbfc set -f 0 -s 100
+set_fans() {
+	nbfc set -f 1 -s $1
+	nbfc set -f 0 -s $1
 }
 
+gaming(){
+	warp
+	set_fans 100
+}
 auto(){
 	nbfc set -f 1 -a
 	nbfc set -f 0 -a
@@ -75,7 +105,14 @@ then
 elif [ $1 == '-t' ]
 then
 	touchpad_preferences
-
+elif [ $1 == '-f' ]
+then
+	if [ -z $2 ]
+	then
+		help
+	else
+		set_fans $2
+	fi
 elif [ $1 == '-h' ]
 then
 	help

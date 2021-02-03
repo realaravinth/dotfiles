@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -129,3 +129,4 @@ alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
 
 
 alias ff="find . | rg "
+export PS1="($(hostname -a))"$PS1
