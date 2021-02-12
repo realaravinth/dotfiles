@@ -153,6 +153,7 @@ alias ttt="feh -F ~/Pictures/ttt.jpg"
 alias p="powerpill"
 
 export BOOKS=~/Syncthing/Books
+export RES=/srv/res/
 
 #eval "$(starship init zsh)"
 alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'

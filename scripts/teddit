@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# requires calc
+# all subreddits should be saved in a file called subs
+# each line should contain only on sub
+
+subs=$(cat subs | wc -l)
+
+while [ $subs -gt 0 ]
+do 
+	wxport req=$(tail -n $subs subs | head -n 100 |  tr "\n" "+")
+	echo https://teddit.batsense.net/$req >> url
+	export subs=$(calc $subs - 100)
+done

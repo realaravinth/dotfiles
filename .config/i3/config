@@ -267,7 +267,7 @@ exec blueman-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # monitor rotation
-exec_always --no-startup-id xrandr --output HDMI-0 --rotate right
+# exec_always --no-startup-id xrandr --output HDMI-0 --rotate right
 
 # Workspace assignments
 assign [class="Spotify"] $ws7
