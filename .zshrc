@@ -99,17 +99,9 @@ source $ZSH/oh-my-zsh.sh
 
 ~/dotfiles/scripts/login.sh
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add ~/.ssh/aravinth
-
 export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/*/bin/
-export PATH=$PATH:~/workspace/fabric/bin
+export PATH=$PATH:~/workspace/fabric/bin:~/dotfiles/scripts
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
@@ -158,6 +150,12 @@ export RES=/srv/res/
 #eval "$(starship init zsh)"
 alias dw='aria2c --file-allocation=none -c -x 12 -s 12 -d .'
 
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # React helper:
 source ~/dotfiles/scripts/react/helper.sh
@@ -178,3 +176,8 @@ alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 alias ble="bluetoothctl connect 38:18:4C:11:C7:63 | tail -n 1 | grep 'Connection successful'"
 alias dn="dnote"
 alias loc="tokei"
+
+
+# volume
+alias mute="pactl set-sink-mute"
+source ~/dotfiles/scripts/audio

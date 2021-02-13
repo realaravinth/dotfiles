@@ -1,0 +1,9 @@
+#!/bin/bash
+
+vol() {
+	pactl set-sink-volume @DEFAULT_SINK@ $1%
+}
+
+list_sinks() {
+	pactl list sinks short
+}
