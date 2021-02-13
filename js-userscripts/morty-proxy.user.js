@@ -19,7 +19,7 @@ const mortyHost = 'https://morty.batsense.net';
 
   // morty has a button to go to the original site, re-writing that would be stupid
   if (!window.location.href.includes(mortyHost)) {
-    let urls = document.links
+    let urls = document.links;
 
     for (let i = 0; i < urls.length; i++) {
       blacklist.forEach(url => {

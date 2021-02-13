@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         teddit proxy
-// @version      0.1
+// @version      0.1.1
 // @description  Re-writing reddit links to teddit
 // @author       Aravinth Manivannan
 // @match        https://*/*
@@ -24,7 +24,7 @@ const tedditHost = 'teddit.batsense.net';
     for (let i = 0; i < urls.length; i++) {
       blacklist.forEach(url => {
         if (urls[i].host.includes(url)) {
-          urls[1].host = tedditHost;
+          urls[i].host = tedditHost;
         }
       });
     }
