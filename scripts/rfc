@@ -1,0 +1,18 @@
+#!/bin/bash
+
+wget https://tools.ietf.org/rfc/
+
+top=$(cat index.html \
+	| rg "(http://tools.ietf.org/html)" \
+	| cut -d '"' -f 2 \
+	| sort -u \
+	| cut -d "/" -f 5 \
+	| sort --human-numeric-sort \
+	| tail -n)
+
+for i in {1..$top}
+do 
+	ipfs add "https://tools.ietf.org/html/$i"
+done
+
+echo $top ~/.ipfs-rfc-archive
