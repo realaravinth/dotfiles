@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         nitter proxy
-// @version      0.1.1
+// @version      0.1.2
 // @description  Re-writing twitter links to nitter
 // @author       Aravinth Manivannan
 // @match        https://*/*
@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 // websites to be proxied
-const blacklist = ['titter.com'];
+const blacklist = ['twitter.com'];
 
 // Location of the Neddit instance
 const nitterHost = 'nitter.batsense.net';
