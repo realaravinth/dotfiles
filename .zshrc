@@ -67,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd)
+plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd systemd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,12 +123,13 @@ source ~/dotfiles/.env/bw
 
 alias rm="/usr/bin/safe-rm"
 
-alias ws="web_search duckduckgo"
-alias crs="ws \!crates"
-alias aur="ws \!aur"
-alias awiki="ws \!archwiki"
-alias rstd="ws \!rustd"
-alias drs="ws \!drs"
+alias ws="web_search searx"
+alias wss="web_search duckduckgo"
+alias crs="wss \!crates"
+alias aur="wss \!aur"
+alias awiki="wss \!archwiki"
+alias rstd="wss \!rustd"
+alias drs="wss \!drs"
 alias gh="firefox https://github.com/realaravinth"
 
 alias cac="cargo c"
