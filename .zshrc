@@ -67,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rust rustup sudo npm yarn npx cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd systemd)
+plugins=(git rust rustup sudo cargo fzf fancy-ctrl-z ripgrep z copydir dirpersist web-search zsh-interactive-cd systemd)
 
 source $ZSH/oh-my-zsh.sh
 
