@@ -336,3 +336,7 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+
+bindsym $mod+t exec ~/dotfiles/scripts/andaman -s
+bindsym $mod+y exec ~/dotfiles/scripts/andaman

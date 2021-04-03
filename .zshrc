@@ -182,3 +182,6 @@ alias loc="tokei"
 # volume
 alias mute="pactl set-sink-mute"
 source ~/dotfiles/scripts/audio
+
+
+alias ls=exa
