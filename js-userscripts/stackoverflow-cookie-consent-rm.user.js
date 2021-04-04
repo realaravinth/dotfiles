@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Go Away
-// @version      0.1.0
+// @version      0.1.1
 // @description  Makes things disappear on screen
 // @author       Aravinth Manivannan
 // @match        *://stackoverlflow.com/*
@@ -44,7 +44,7 @@ const CLASS_NAME =
   'ff-sans ps-fixed z-nav-fixed ws4 sm:w-auto p32 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner';
 
 const run = () => {
-  document.getElementsByClassName(CLASS_NAME)[0].style.visibility = 'hidden';
+  document.getElementsByClassName(CLASS_NAME)[0].remove();
 };
 
 (function() {
