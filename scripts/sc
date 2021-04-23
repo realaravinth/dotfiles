@@ -1,0 +1,181 @@
+#!/bin/bash
+# one line to give the program's name and a brief description.
+# Copyright © 2021 yourname
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Constants
+
+readonly DIR=~/.shortcuts
+readonly DB=$DIR/shortcut.db
+readonly TABLE_SHORTCUT_NAME="shortcuts"
+
+readonly TABLE_SHORTCUT="
+CREATE TABLE IF NOT EXISTS $TABLE_SHORTCUT_NAME (
+	name VARCHAR(50) UNIQUE NOT NULL PRIMARY KEY,
+	dir VARCHAR(500) UNIQUE NOT NULL
+);"
+
+# Utility functions
+
+help() {
+	cat << EOF
+Shortcut: Store and cd to directories with shortcuts
+USAGE:
+    sc <options>
+
+OPTIONS:
+  -i  --init                             init
+  -a  --add     <name> <dir>             add shortcut
+  -f  --find    <name> <dir>             find shortcut
+  -u  --update  
+                -n  --name <name> <dir>  update shortcut name
+                -n  --dir  <name> <dir>  update shortcut directory
+  -r  --remove  <name>                   remove shortcut
+  -l  --list                             list all shortcuts
+  -h  --help                             print help
+EOF
+}
+
+# Checks dependencies
+check_deps() {
+	if ! command -v sqlite3 &> /dev/null
+	then
+		echo "sqlite3 could not be found"
+		exit 1
+	fi
+}
+
+check_arg(){
+	if [ -z $1 ]
+	then
+		help
+		exit 1
+	fi
+}
+
+match_arg() {
+	if [ $1 == $2 ] || [ $1 == $3 ]
+	then
+		return 0
+	else
+		return 1
+	fi
+}
+
+is_absolute_path() {
+	if [[ "$1" = /* ]]
+	then
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Runner functions
+
+init_db() {
+	if [ ! -d "$DIR" ]
+	then
+		echo "Creating dir $DIR"
+		mkdir $DIR
+	fi
+	cd $DIR
+	sqlite3 $DB "$TABLE_SHORTCUT"
+}
+
+find_shortcut() {
+	readonly FIND="SELECT dir FROM $TABLE_SHORTCUT_NAME WHERE name = '$1';"
+	sqlite3 $DB "$FIND"
+}
+
+add_shortcut() {
+	readonly ADD="INSERT INTO $TABLE_SHORTCUT_NAME (name, dir) VALUES('$1', '$2');"
+	if is_absolute_path $2
+	then
+		sqlite3 $DB "$ADD"
+	else
+		echo "Please provide absolute path for $2"
+		exit 1
+	fi
+}
+
+list_all_shortcuts() {
+	readonly LIST="SELECT name, dir FROM $TABLE_SHORTCUT_NAME;"
+	sqlite3 $DB "$LIST"
+}
+
+update_shortcut_dir() {
+	readonly UPDATE="UPDATE $TABLE_SHORTCUT_NAME SET dir = '$2' WHERE name = '$1';"
+	sqlite3 $DB "$UPDATE"
+}
+
+update_shortcut_name() {
+	readonly UPDATE="UPDATE $TABLE_SHORTCUT_NAME SET name = '$2' WHERE name = '$1';"
+	sqlite3 $DB "$UPDATE"
+}
+
+remove_shortcut_where_name() {
+	readonly REMOVE="DELETE FROM $TABLE_SHORTCUT_NAME where name = '$1';"
+	sqlite3 $DB "$REMOVE"
+}
+
+# Execution begins here
+check_deps
+
+check_arg $1
+
+if match_arg $1 '-i' '--init'
+then
+	init_db
+elif match_arg $1 '-a' '--add'
+then
+	check_arg $2
+	check_arg $3
+	add_shortcut $2 $3
+elif match_arg $1 '-r' '--remove'
+then
+	check_arg $2
+	remove_shortcut_where_name $2
+elif match_arg $1 '-f' '--find'
+then
+	check_arg $2
+	find_shortcut $2
+elif match_arg $1 '-l' '--list'
+then
+	list_all_shortcuts
+elif match_arg $1 '-u' '--update'
+then
+	check_arg $2
+	check_arg $3
+	check_arg $4
+	if match_arg $2 '-n' '--name'
+	then
+		update_shortcut_name $3 $4
+	elif match_arg $2 '-d' '--dir'
+	then
+		update_shortcut_dir $3 $4
+	else
+		echo "Error: $2 is not an option"
+		help
+		exit 1
+	fi
+elif match_arg $1 '-h' '--help'
+then
+	help
+else
+	echo "Error: $1 is not an option"
+	help
+	exit 1
+fi

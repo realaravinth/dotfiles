@@ -185,3 +185,25 @@ source ~/dotfiles/scripts/audio
 
 
 alias ls=exa
+
+# shortcuts
+
+# cd into shortcut dir
+scd() {
+	cd $(sc -f $1)
+}
+
+# bat shortcut file
+scb() {
+	/usr/bin/bat $(sc -f $1)
+}
+
+# cat shortcut file
+scc() {
+	/usr/bin/cat $(sc -f $1)
+}
+
+# open in vim
+scv() {
+	/usr/bin/nvim $(sc -f $1)
+}
