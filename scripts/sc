@@ -1,6 +1,6 @@
 #!/bin/bash
-# one line to give the program's name and a brief description.
-# Copyright © 2021 yourname
+# Shortcut - store and retrieve shortcuts to files
+# Copyright © 2021 Aravinth Manivannan <realaravinth@batsense.net>
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -17,6 +17,8 @@
 
 # Constants
 
+readonly VERSION="0.1.0"
+
 readonly DIR=~/.shortcuts
 readonly DB=$DIR/shortcut.db
 readonly TABLE_SHORTCUT_NAME="shortcuts"
@@ -31,20 +33,21 @@ CREATE TABLE IF NOT EXISTS $TABLE_SHORTCUT_NAME (
 
 help() {
 	cat << EOF
-Shortcut: Store and cd to directories with shortcuts
+Shortcut: Store and retrieve shortcuts to directories and files $VERSION
 USAGE:
     sc <options>
 
 OPTIONS:
-  -i  --init                             init
-  -a  --add     <name> <dir>             add shortcut
-  -f  --find    <name> <dir>             find shortcut
+  -i  --init                              init
+  -a  --add     <name> <file>             add shortcut
+  -f  --find    <name> <file>             find shortcut
   -u  --update  
-                -n  --name <name> <dir>  update shortcut name
-                -n  --dir  <name> <dir>  update shortcut directory
-  -r  --remove  <name>                   remove shortcut
-  -l  --list                             list all shortcuts
-  -h  --help                             print help
+                -n  --name <name> <file>  update shortcut name
+                -n  --dir  <name> <file>  update shortcut file
+  -r  --remove  <name>                    remove shortcut
+  -l  --list                              list all shortcuts
+  -v  --version                           print version
+  -h  --help                              print help
 EOF
 }
 
@@ -171,6 +174,9 @@ then
 		help
 		exit 1
 	fi
+elif match_arg $1 '-v' '--version'
+then
+	echo "Shortcut $VERSION"
 elif match_arg $1 '-h' '--help'
 then
 	help
@@ -179,3 +185,5 @@ else
 	help
 	exit 1
 fi
+
+exit 0
