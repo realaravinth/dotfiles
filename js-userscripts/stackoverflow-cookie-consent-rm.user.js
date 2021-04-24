@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Go Away
-// @version      0.1.1
+// @version      0.1.2
 // @description  Makes things disappear on screen
 // @author       Aravinth Manivannan
 // @match        *://stackoverlflow.com/*
@@ -40,12 +40,15 @@
 // @grant        AGPLv3 or above
 // ==/UserScript==
 
-const CLASS_NAME =
-  'ff-sans ps-fixed z-nav-fixed ws4 sm:w-auto p32 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner';
+const CLASS_NAME = [
+  'ff-sans ps-fixed z-nav-fixed ws4 sm:w-auto p32 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner',
+  'ff-sans ps-fixed z-nav-fixed wmx4 p16 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner',
+];
 
-const run = () => {
-  document.getElementsByClassName(CLASS_NAME)[0].remove();
-};
+const run = () =>
+  CLASS_NAME.forEach(className =>
+    document.getElementsByClassName(className)[0].remove(),
+  );
 
 (function() {
   'use strict';

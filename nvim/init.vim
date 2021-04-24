@@ -45,6 +45,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'ianks/vim-tsx'
 Plug 'dense-analysis/ale'
 Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/c.vim'
 
 " Snippets
 " Track the engine.
