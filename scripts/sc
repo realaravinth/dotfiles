@@ -43,7 +43,7 @@ OPTIONS:
   -f  --find    <name> <file>             find shortcut
   -u  --update  
                 -n  --name <name> <file>  update shortcut name
-                -n  --dir  <name> <file>  update shortcut file
+                -d  --dir  <name> <file>  update shortcut file
   -r  --remove  <name>                    remove shortcut
   -l  --list                              list all shortcuts
   -v  --version                           print version
