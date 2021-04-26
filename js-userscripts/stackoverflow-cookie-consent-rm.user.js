@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Go Away
-// @version      0.1.3
+// @version      0.1.4
 // @description  Makes things disappear on screen
 // @author       Aravinth Manivannan
 // @match        *://stackoverlflow.com/*
