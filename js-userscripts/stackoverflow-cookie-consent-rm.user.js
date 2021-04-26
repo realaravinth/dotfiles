@@ -43,6 +43,7 @@
 const CLASS_NAME = [
   'ff-sans ps-fixed z-nav-fixed ws4 sm:w-auto p32 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner',
   'ff-sans ps-fixed z-nav-fixed wmx4 p16 bg-black-750 fc-white bar-lg b16 l16 r16 js-consent-banner',
+  'grid wmx12 mx-auto px8 py12 jc-space-between ai-center lg:pl24 lg:pr24 md:fd-column sm:fd-row sm:ai-center'
 ];
 
 const run = () => {
