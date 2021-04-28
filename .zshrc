@@ -110,7 +110,7 @@ alias vim="nvim"
 #alias firefox='firefox-developer-edition'
 alias listen='tshark -i enp8s0 -w /tmp/testing.pcapng'
 alias upload="getq.sh"
-alias cpd="copydir"
+alias cwd="copydir"
 
 fzf-history-widget-accept() {
   fzf-history-widget
@@ -206,4 +206,11 @@ scc() {
 # open in vim
 scv() {
 	/usr/bin/nvim $(sc -f $1)
+}
+
+# Open files with fzf and xdg-open
+f() {
+	local files
+	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+	[[ -n "$files" ]] && xdg-open "${files[@]}"
 }

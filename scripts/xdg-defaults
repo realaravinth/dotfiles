@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Set default app details
+# Usage: set_default package.json nvim.desktop 
+set_default(){
+	type=$(xdg-mime query filetype $1)
+	xdg-mime default $2 $type
+	default=$(xdg-mime query default $type)
+	echo "filetype: $type app: $default"
+}
+
+# See app details
+# Usage: details vgcore.119773
+details() {
+	type=$(xdg-mime query filetype $1)
+	default=$(xdg-mime query default $type)
+	echo "filetype: $type app: $default"
+}
