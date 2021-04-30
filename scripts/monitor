@@ -14,9 +14,8 @@ help(){
 	echo " t			  <2000-6000>	changes temperature"
 	echo "focus							toggles laptop display on and off"
 	echo "capture		   filename		captures screen and saves in filename specified"
+	echo "present		         		turns off HDMI-0(use "focus on" to turn it back on)"
     echo " help							displays this menu"
-    echo 
-    echo "Buy me a coffee realaravinth@batsense.net :)"
 }
 
 
@@ -107,7 +106,9 @@ else
 			else
 				ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i :0 -c:v ffvhuff $2.mkv
 			fi
-
+	elif [ $1 == 'present' ]
+	then
+			xrandr --output HDMI-0 --off
     else
         echo "Error: $1 is not an option"
         help 
