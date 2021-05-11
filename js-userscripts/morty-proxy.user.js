@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Morty proxy
-// @version      0.1.2
+// @version      0.1.3
 // @description  Proxies websites to a morty proxies by re-writing links in a document
 // @author       Aravinth Manivannan
 // @match        https://*/*
@@ -9,7 +9,13 @@
 // ==/UserScript==
 
 // websites to be proxied
-const blacklist = ['medium.com', 'blog.discord.com', 'lifehacker.com', 'uxdesign.cc'];
+const blacklist = [
+  'medium.com',
+  'blog.discord.com',
+  'lifehacker.com',
+  'uxdesign.cc',
+  'hub.packtpub.com',
+];
 
 // Location of the proxy
 const mortyHost = 'https://morty.batsense.net';
