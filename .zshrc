@@ -107,7 +107,7 @@ export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
-#alias firefox='firefox-developer-edition'
+alias firefox='firefox-developer-edition'
 alias listen='tshark -i enp8s0 -w /tmp/testing.pcapng'
 alias upload="getq.sh"
 alias cwd="copydir"
@@ -208,6 +208,11 @@ scv() {
 	/usr/bin/nvim $(sc -f $1)
 }
 
+# add current directory
+scad() {
+	sc -a $1 $(pwd)
+}
+
 # Open files with fzf and xdg-open
 f() {
 	local files
@@ -217,3 +222,7 @@ f() {
 
 # Get sonarqube logins
 source ~/dotfiles/.env/sonarqaube
+
+alias yt="yarn test"
+alias yb="yarn build"
+alias yd="yarn doc"
