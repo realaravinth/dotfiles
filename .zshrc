@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/*/bin/
-export PATH=$PATH:~/workspace/fabric/bin:~/dotfiles/scripts
+export PATH=$PATH:~/workspace/fabric/bin:~/dotfiles/scripts:~/bin/:~/dotfiles/scripts/redis/
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
@@ -137,6 +137,7 @@ alias cr="cargo r"
 alias crr="cargo r --release"
 alias ct="cargo t"
 alias cb="cargo b"
+alias cbb="cargo bench"
 alias ccd="cargo doc"
 alias ctr="cargo t --release"
 alias cat="/usr/bin/bat"
@@ -226,3 +227,20 @@ source ~/dotfiles/.env/sonarqaube
 alias yt="yarn test"
 alias yb="yarn build"
 alias yd="yarn doc"
+
+notification_causing_apps=("telegram-desktop" "element-desktop" "discord")
+# instantly kill all notification-causing programs:
+cloak() {
+	for app in ${notification_causing_apps[@]}
+	do 
+		killall $app || true
+	done
+}
+
+# restore apps killed by cloak:
+uncloak(){
+	for app in ${notification-_ausing_apps[@]}
+	do 
+		exec $app&
+	done
+}
