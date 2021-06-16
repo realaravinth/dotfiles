@@ -244,3 +244,7 @@ uncloak(){
 		exec $app&
 	done
 }
+
+ctemp() {
+	cd $(mktemp -d)
+}

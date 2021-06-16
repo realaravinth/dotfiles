@@ -339,7 +339,7 @@ mode "$mode_gaps_outer" {
 
 
 # launch andaman
-bindsym $mod+Shif+t exec ~/dotfiles/scripts/andaman -s
+bindsym $mod+Shif+w exec ~/dotfiles/scripts/andaman -s
 bindsym $mod+Shif+y exec ~/dotfiles/scripts/andaman
 
 # launch rofi
