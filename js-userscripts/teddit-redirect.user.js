@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         teddit proxy
-// @version      0.1.1
+// @version      0.1.2
 // @description  Re-writing reddit links to teddit
 // @author       Aravinth Manivannan
 // @match        https://*/*
@@ -12,7 +12,7 @@
 const blacklist = ['reddit.com'];
 
 // Location of the Teddit instance
-const tedditHost = 'teddit.batsense.net';
+const tedditHost = 'libreddit.batsense.net';
 
 (function() {
   'use strict';
