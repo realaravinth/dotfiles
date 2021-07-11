@@ -248,3 +248,9 @@ uncloak(){
 ctemp() {
 	cd $(mktemp -d)
 }
+
+cctemp() {
+	cd $(mktemp -d)
+	cargo init a
+	cd a
+}
