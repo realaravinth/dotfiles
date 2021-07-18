@@ -1,0 +1,44 @@
+#!/bin/bash
+
+gen() {
+cat << EOF
+[$1-https]
+type = https
+local_ip = 127.0.0.1
+local_port = 443
+use_encryption = true
+use_compression = true
+custom_domains = $1.$2
+
+[$1-https]
+type = http
+local_ip = 127.0.0.1
+local_port = 80
+use_encryption = true
+use_compression = true
+custom_domains = $1.$2
+
+EOF
+}
+
+help() {
+	cat << EOF
+  gen: Generate FRP configuration for http and https servers
+  USAGE:
+	gen <subdomain> <domain name>
+EOF
+}
+
+check_arg(){
+    if [ -z $1 ]
+    then
+        help
+        exit 1
+    fi
+}
+
+check_arg $1
+check_arg $2
+
+
+gen $1 $2

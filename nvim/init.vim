@@ -79,6 +79,9 @@ Plug 'prettier/vim-prettier', {
   \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
   \ }
 
+" Language tool
+Plug 'dpelle/vim-LanguageTool'
+
 " Required for operations modifying multiple buffers like rename.
 set hidden
 let g:LanguageClient_serverCommands = {

@@ -1,0 +1,26 @@
+#!/bin/bash
+# generate random string
+
+help() {
+	cat << EOF
+  Rand: Generate random string
+  USAGE:
+  	rand <length of string>
+EOF
+}
+
+check_arg(){
+    if [ -z $1 ]
+    then
+        help
+        exit 1
+    fi
+}
+
+rand() {
+	check_arg $1
+	openssl rand -hex  $1 # specify length
+}
+
+check_arg $1
+rand $1
