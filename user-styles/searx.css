@@ -1,0 +1,24 @@
+@-moz-document domain("searx.batsense.net") {
+  .result_header a .highlight {
+    background-color: pink;
+    padding: 0.2px;
+  }
+
+  body {
+    color: #adbac7;
+    background-color: #22272e;
+  }
+
+  .result_header a {
+    color: #539bf5;
+  }
+
+  .well,
+  .result-code:hover,
+  .result-default:hover,
+  .result-map:hover,
+  .result-torrent:hover,
+  .result-videos:hover {
+    background-color: #22272e;
+  }
+}
