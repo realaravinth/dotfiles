@@ -51,4 +51,8 @@
     background: #262626;
     color: #fff;
   }
+  .wp-block-column,
+  .article-series {
+    background: #373e47;
+  }
 }
