@@ -1,0 +1,16 @@
+.sidebar {
+  display: none;
+}
+
+#main {
+  width: 100%;
+}
+
+nav.sub,
+.content {
+  margin-left: 0px;
+}
+
+div.rustdoc {
+  /*padding: 0; */
+}

@@ -254,3 +254,4 @@ cctemp() {
 	cargo init a
 	cd a
 }
+alias pubip="nc ipv4.cat 80"
