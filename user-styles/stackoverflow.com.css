@@ -1,0 +1,5 @@
+@-moz-document domain("stackoverflow.com") {
+  .bg-black-025.bs-sm.bt.bc-black-100.ps-fixed.l0.r0.b0.z-nav.js-dismissable-hero {
+    display: none;
+  }
+}
