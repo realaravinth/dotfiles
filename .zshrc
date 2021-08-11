@@ -255,3 +255,5 @@ cctemp() {
 	cd a
 }
 alias pubip="nc ipv4.cat 80"
+
+alias rm=trash
