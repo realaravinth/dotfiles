@@ -1,0 +1,60 @@
+From a490f75eb69fc7dab943a548314cbbe9913ce61c Mon Sep 17 00:00:00 2001
+From: realaravinth <realaravinth@batsense.net>
+Date: Fri, 13 Aug 2021 10:29:42 +0530
+Subject: [PATCH] add web search engines
+
+---
+ plugins/web-search/README.md             | 9 +++++----
+ plugins/web-search/web-search.plugin.zsh | 1 +
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/plugins/web-search/README.md b/plugins/web-search/README.md
+index da90f90a..4ecda662 100644
+--- a/plugins/web-search/README.md
++++ b/plugins/web-search/README.md
+@@ -12,8 +12,8 @@ plugins=( ... web-search)
+ 
+ You can use the `web-search` plugin in these two forms:
+ 
+-* `web_search <context> <term> [more terms if you want]`
+-* `<context> <term> [more terms if you want]`
++- `web_search <context> <term> [more terms if you want]`
++- `<context> <term> [more terms if you want]`
+ 
+ For example, these two are equivalent:
+ 
+@@ -25,8 +25,9 @@ $ google oh-my-zsh
+ Available search contexts are:
+ 
+ | Context               | URL                                      |
+-|-----------------------|------------------------------------------|
++| --------------------- | ---------------------------------------- |
+ | `bing`                | `https://www.bing.com/search?q=`         |
++| `searx`               | `https://searx.batsense.net/search?q=`   |
+ | `google`              | `https://www.google.com/search?q=`       |
+ | `yahoo`               | `https://search.yahoo.com/search?p=`     |
+ | `ddg` or `duckduckgo` | `https://www.duckduckgo.com/?q=`         |
+@@ -46,7 +47,7 @@ Available search contexts are:
+ Also there are aliases for bang-searching DuckDuckGo:
+ 
+ | Context   | Bang  |
+-|-----------|-------|
++| --------- | ----- |
+ | `wiki`    | `!w`  |
+ | `news`    | `!n`  |
+ | `youtube` | `!yt` |
+diff --git a/plugins/web-search/web-search.plugin.zsh b/plugins/web-search/web-search.plugin.zsh
+index 0a2b8809..1378d4de 100644
+--- a/plugins/web-search/web-search.plugin.zsh
++++ b/plugins/web-search/web-search.plugin.zsh
+@@ -9,6 +9,7 @@ function web_search() {
+     $ZSH_WEB_SEARCH_ENGINES
+     google      "https://www.google.com/search?q="
+     bing        "https://www.bing.com/search?q="
++	searx       "https://searx.batsense.net/search?q="
+     yahoo       "https://search.yahoo.com/search?p="
+     duckduckgo  "https://www.duckduckgo.com/?q="
+     startpage   "https://www.startpage.com/do/search?q="
+-- 
+2.33.0
+
