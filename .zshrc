@@ -257,3 +257,4 @@ cctemp() {
 alias pubip="nc ipv4.cat 80"
 
 alias rm=trash
+daily-events
