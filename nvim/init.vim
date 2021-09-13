@@ -682,4 +682,4 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 " point jedi to python virtual env
 "let g:jedi#environment_path = "venv"
 "let g:jedi#environment_path = "/usr/bin/python3.9"
-let g:jedi#completions_enabled = 0
+"let g:jedi#completions_enabled = 0
