@@ -101,3 +101,5 @@ source $OSH/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 
 alias vim=nvim
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

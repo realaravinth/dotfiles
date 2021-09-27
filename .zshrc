@@ -257,4 +257,8 @@ cctemp() {
 alias pubip="nc ipv4.cat 80"
 
 alias rm=trash
+alias rrm=/bin/rm
 daily-events
+
+# Workspace bins
+export PATH=$PATH:/opt/hub/bin

@@ -35,7 +35,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'mattn/emmet-vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -73,11 +73,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
 "prettier-vim
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/0.x',
-  \  'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] 
-  \ }
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Language tool
 Plug 'dpelle/vim-LanguageTool'
@@ -94,7 +91,7 @@ let g:LanguageClient_serverCommands = {
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 "vim-prettier config
-map <C-s> :Prettier<CR>
+map <C-s> :PrettierAsync<CR>
 
 
 " Ale
@@ -102,6 +99,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tsserver', 'tslint'],
 \   'rust': ['analyzer', 'rls', 'rustc'],
+\   'go': ['gopls'],
 \   'java': ['/usr/bin/jdtls', '-data', 'getcwd()'],
 \}
 
@@ -683,3 +681,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 "let g:jedi#environment_path = "venv"
 "let g:jedi#environment_path = "/usr/bin/python3.9"
 "let g:jedi#completions_enabled = 0
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
