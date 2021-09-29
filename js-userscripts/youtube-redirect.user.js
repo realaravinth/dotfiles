@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         youtube proxy
-// @version      0.1.1
+// @version      0.1.2
 // @description  Re-writing reddit links to tube
 // @author       Aravinth Manivannan
 // @match        https://*/*
@@ -31,8 +31,10 @@ const tubeHost = "tube.batsense.net";
     const iframes = document.querySelectorAll("iframe");
     iframes.forEach((frame) => {
       blacklist.forEach((url) => {
-        if (frame.src.host.includes(url)) {
-          frame.src.host = tubeHost;
+        let frameUrl = new URL(frame.src);
+        if (frameUrl.host.includes(url)) {
+          frameUrl.host = tubeHost;
+          frame.src = frameUrl.toString();
         }
       });
     });
