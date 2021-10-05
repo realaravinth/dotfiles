@@ -262,3 +262,6 @@ daily-events
 
 # Workspace bins
 export PATH=$PATH:/opt/hub/bin
+
+alias rg="rg --color=always"
+alias less="less -R"

@@ -100,6 +100,7 @@ source $OSH/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
+export OSH_THEME="minimal"
 alias vim=nvim
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

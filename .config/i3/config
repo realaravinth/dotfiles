@@ -344,3 +344,6 @@ bindsym $mod+Shif+y exec ~/dotfiles/scripts/andaman
 
 # launch rofi
 bindsym $mod+t exec ~/dotfiles/scripts/rofi
+
+# launch quickswitch
+bindsym $mod+u exec quickswitch
