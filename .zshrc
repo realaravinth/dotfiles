@@ -265,3 +265,7 @@ export PATH=$PATH:/opt/hub/bin
 
 alias rg="rg --color=always"
 alias less="less -R"
+
+# use bat with man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+

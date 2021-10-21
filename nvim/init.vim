@@ -98,7 +98,7 @@ map <C-s> :PrettierAsync<CR>
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['tsserver', 'tslint'],
-\   'rust': ['analyzer', 'rls', 'rustc'],
+\   'rust': ['analyzer'],
 \   'go': ['gopls'],
 \   'java': ['/usr/bin/jdtls', '-data', 'getcwd()'],
 \}
@@ -238,9 +238,9 @@ let g:rustfmt_autosave_if_config_present = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 1
 let g:rust_clip_command = 'xclip -selection clipboard'
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
+"let g:racer_cmd = "~/.cargo/bin/racer"
+"let g:racer_experimental_completer = 1
+"let $RUST_SRC_PATH = systemlist("rustc --print sysroot")[0] . "/lib/rustlib/src/rust/src"
 
 " Completion
 " Better display for messages
@@ -684,3 +684,9 @@ let g:jedi#completions_enabled = 0
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+
+"" make background transparent
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
