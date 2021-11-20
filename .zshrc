@@ -107,7 +107,7 @@ export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vim="nvim"
-alias firefox='firefox-developer-edition'
+alias firefox='librewolf'
 alias listen='tshark -i enp8s0 -w /tmp/testing.pcapng'
 alias upload="getq.sh"
 alias cwd="copydir"

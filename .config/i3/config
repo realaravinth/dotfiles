@@ -184,7 +184,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+Shift+x  exec ~/.config/i3/scripts/lockscreen.sh  
-bindsym $mod+semicolon  exec firefox-developer-edition
+bindsym $mod+semicolon  exec librewolf
 
 bindsym $mod+p exec monitor extends right
 bindsym $mod+o exec monitor mirror

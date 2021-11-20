@@ -58,9 +58,6 @@ Plug 'honza/vim-snippets'
 " Markdown renderer:
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
-" Live server
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-
 " async linting
 Plug 'neomake/neomake'
 Plug 'vim-syntastic/syntastic'
