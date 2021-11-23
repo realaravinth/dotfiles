@@ -1,26 +1,4 @@
 #!/bin/bash
-# help(){
-# 	echo "Launch control: Wrapper scripts to alter performance"
-#     echo "Usage: lctrl [option]"
-#     echo
-#     echo "requires"
-# 	echo "[*] nbfc installed and configured for fan speed control"
-# 	echo "[*] cpupower installed for CPU governor settings"
-# 	echo "Check https://aur.archlinux.org/packages/nbfc/ or https://github.com/hirschmann/nbfc"
-# 	echo "note to self: use Acer Predator G3-572 profile"
-# 	echo ""
-#     echo "	-w	       warp speed	  sets CPU governor to performance"
-#     echo "	-p	       power save	  sets CPU governor to powersave"
-# 	echo "	-a	       auto fans  	  sets fan speed to auto"
-# 	echo "	-g	       gaming mode	  performance governor and full throttle fans"
-# 	echo "	-f <0-100> set fans	sets  fan speed to specified rate"
-# 	echo "	-s 	       status      	  displays CPU and fan status"
-# 	echo "	-t 	       touchpad       enables touchpad"
-# 	echo "	-ss        suspend        suspends the machine"
-#     echo "	-h         help			  displays this menu"
-#     echo 
-#     echo "Buy me a coffee realaravinth@batsense.net :)"
-# }
 
 help(){
 	cat << EOF
@@ -55,9 +33,13 @@ warp(){
 
 touchpad_preferences(){
 	id=$(xinput list | grep Touchpad | cut -d "=" -f 2 | cut -d "[" -f 1)
-	echo "ID: $id"
-	xinput set-prop $id 342 1
-	xinput set-prop $id 340 1
+	tap_prop=$(xinput list-props $id \
+		| grep "Tapping Enabled" \
+		|  head -n 1 \
+		| cut -d "(" -f 2 \
+		| cut -d ")" -f 1)
+	xinput set-prop $id $tap_prop 1
+#	xinput set-prop $id 340 1
 }
 
 power_save(){
