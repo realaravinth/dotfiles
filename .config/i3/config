@@ -242,6 +242,7 @@ exec --no-startup-id /home/aravinth/dotfiles/scripts/lctrl -t
 
 # Auto-start applications
 exec thunderbird
+exec mullvad-vpn
 #exec telegram-desktop
 #exec element-desktop
 #exec discord
