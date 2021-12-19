@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 export ass=samsung-gtel3g
 export PATH=$PATH:~/.local/bin/:~/.cargo/bin/:~/go/bin/:~/yarn/bin/:/home/aravinth/.gem/ruby/2.7.0/bin:/home/aravinth/.rustup/toolchains/*/bin/
-export PATH=$PATH:~/workspace/fabric/bin:~/dotfiles/scripts:~/bin/:~/dotfiles/scripts/redis/
+export PATH=$PATH:~/workspace/fabric/bin:~/dotfiles/scripts:~/bin/:~/dotfiles/scripts/redis/:~/.npm-global/bin
 export outdir=/home/aravinth/.local/var/pmbootstrap/chroot_native/home/pmos/build/src
 export pmos_apk=~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 
@@ -269,3 +269,16 @@ alias less="less -R"
 # use bat with man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias pnpm="$(which npm)"
+alias npm="/home/aravinth/.npm-global/bin/pnpm"
+
+alias nb="npm build"
+alias nt="npm test"
+alias nd="npm doc"
+
+nvm use stable
