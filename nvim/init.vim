@@ -58,6 +58,7 @@ Plug 'honza/vim-snippets'
 " Markdown renderer:
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
+
 " async linting
 Plug 'neomake/neomake'
 Plug 'vim-syntastic/syntastic'
@@ -75,6 +76,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Language tool
 Plug 'dpelle/vim-LanguageTool'
+
+Plug 'psliwka/vim-smoothie'
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -230,10 +233,10 @@ let g:localvimrc_ask = 0
 
 " racer + rust
 " https://github.com/rust-lang/rust.vim/issues/192
-let g:rustfmt_autosave = 1
-let g:rustfmt_autosave_if_config_present = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 1
+"let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave_if_config_present = 1
+"let g:rustfmt_emit_files = 1
+"let g:rustfmt_fail_silently = 1
 let g:rust_clip_command = 'xclip -selection clipboard'
 "let g:racer_cmd = "~/.cargo/bin/racer"
 "let g:racer_experimental_completer = 1
@@ -379,10 +382,10 @@ tnoremap <C-c> <Esc>
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
 
-" Suspend with Ctrl+f
-inoremap <C-f> :sus<cr>
-vnoremap <C-f> :sus<cr>
-nnoremap <C-f> :sus<cr>
+"" Suspend with Ctrl+f
+"inoremap <C-f> :sus<cr>
+"vnoremap <C-f> :sus<cr>
+"nnoremap <C-f> :sus<cr>
 
 " Jump to start and end of line using the home row keys
 map H ^
@@ -687,3 +690,7 @@ highlight Normal guibg=none
 highlight NonText guibg=none
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+
+" smooth scrolling
+let g:smoothie_experimental_mappings=v:true
