@@ -5,6 +5,7 @@ from OpenSSL import SSL
 from pathlib import Path
 from cryptography import x509
 from cryptography.x509.oid import NameOID
+from datetime import datetime
 import idna
 
 from socket import socket
@@ -88,6 +89,16 @@ def check_it_out(hostname, port):
     hostinfo = get_certificate(hostname, port)
     print_basic_info(hostinfo)
 
+now = datetime.now()
+def warning(hostinfo):
+    #expiry = datetime.strptime(hostinfo.cert.not_valid_after, '%Y-%m-%d %I:%M:%S')
+    expiry = hostinfo.cert.not_valid_after
+    if now > expiry:
+        print(f"[ERROR] {hostinfo.hostname} has expiried on {str(expiry)}")
+        return
+    if now.month == expiry.month:
+        print(f"[WARNING] {hostinfo.hostname} is expiring on {str(expiry)}")
+
 
 import concurrent.futures
 if __name__ == '__main__':
@@ -100,4 +111,5 @@ if __name__ == '__main__':
                 hosts.append(host.strip())
 
         for hostinfo in e.map(lambda x: get_certificate(x, 443), hosts):
-            print_basic_info(hostinfo)
+#            print_basic_info(hostinfo)
+            warning(hostinfo)
