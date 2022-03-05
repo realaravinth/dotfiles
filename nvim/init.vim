@@ -79,12 +79,24 @@ Plug 'dpelle/vim-LanguageTool'
 
 Plug 'psliwka/vim-smoothie'
 
+
+" Solidity
+Plug 'tomlion/vim-solidity'
+
+" C clang
+Plug 'xavierd/clang_complete'
+
+
 " Required for operations modifying multiple buffers like rename.
 set hidden
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
+    \ 'cpp': ['ccls', '--log-file=/tmp/cc.log'],
+    \ 'cuda': ['ccls', '--log-file=/tmp/cc.log'],
+    \ 'objc': ['ccls', '--log-file=/tmp/cc.log'],
     \ }
 
 "prettier config
@@ -97,16 +109,18 @@ map <C-s> :PrettierAsync<CR>
 " Ale
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'c': ['ccls'],
+\   'cpp': ['ccls'],
 \   'typescript': ['tsserver', 'tslint'],
 \   'rust': ['analyzer'],
 \   'go': ['gopls'],
 \   'java': ['/usr/bin/jdtls', '-data', 'getcwd()'],
 \}
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1

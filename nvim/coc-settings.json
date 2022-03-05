@@ -2,5 +2,17 @@
   "rust-analyzer.cargo-watch.enable": true,
   "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
   "tsserver.npm": "/usr/bin/npm",
-  "rust.build_on_save": false
+  "rust.build_on_save": false,
+  "languageserver": {
+  "ccls": {
+    "command": "ccls",
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+    "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+  }
+}
 }
