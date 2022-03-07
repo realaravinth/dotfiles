@@ -78,8 +78,7 @@ else
 						help
 				else
 					echo $2 > $CONFIG/brightness
-					redshift -m randr -O $2
-					reload
+					redshift -m wayland -O $2 &
 				fi
 	elif [ $1 == 'focus' ]
 	then
