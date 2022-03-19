@@ -86,6 +86,10 @@ Plug 'tomlion/vim-solidity'
 " C clang
 Plug 'xavierd/clang_complete'
 
+" Processing
+Plug 'sophacles/vim-processing'
+
+
 
 " Required for operations modifying multiple buffers like rename.
 set hidden

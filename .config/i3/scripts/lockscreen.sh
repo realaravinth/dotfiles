@@ -2,5 +2,4 @@
 
 LOCKSCREEN="/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
 
-swaylock
-
+swaylock -f -c 000000 
