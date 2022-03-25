@@ -1,6 +1,5 @@
 #!/bin/bash
 
-LOCKSCREEN="/home/aravinth/Pictures/Wallpapers/lockscreen.jpg"
+readonly LOCKSCREEN="/home/aravinth/Pictures/Wallpapers/arch-darker.png"
 
-swaylock
-
+swaylock -i $LOCKSCREEN
