@@ -208,7 +208,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command /home/aravinth/dotfiles/.config/i3/scripts/statusbar.sh
 
     colors {
         statusline #ffffff
@@ -227,16 +228,11 @@ bindsym $mod+z move workspace to output right
 bindsym $mod+x move workspace to output left
 
 # Workspace assignments
-assign [class="Spotify"] $ws7
-assign [class="spotify"] $ws7
-assign [class="element"] $ws8
-assign [class="Element"] $ws8
-assign [class="discord"] $ws8
-assign [class="Gitter"] $ws8
-assign [class="Rocket.Chat"] $ws8
-assign [class="Telegram"] $ws8
-assign [class="Bitwarden"] $ws9
-assign [class="Thunderbird"] $ws10
+assign [class="Spotify"] 7
+assign [class="spotify"] 7
+assign [class="element"] 8
+assign [class="Element"] 8
+assign [class="Thunderbird"] 10
 # Set inner/outer gaps
 gaps inner 30
 gaps outer 15
@@ -250,7 +246,7 @@ exec rsibreak
 exec albert
 
 # notification manager
-exec --no-startup-id dunst
+exec --no-startup-id swaync
 #exec --no-startup-id clipmenu
 
 # lockscreen
@@ -269,3 +265,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+exec --no-startup-id /home/aravinth/dotfiles/.config/i3/scripts/keyring.sh
+
+
+bindsym $mod+n exec swaync-client -t
