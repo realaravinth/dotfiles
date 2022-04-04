@@ -269,4 +269,5 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 exec --no-startup-id /home/aravinth/dotfiles/.config/i3/scripts/keyring.sh
 
 
-bindsym $mod+n exec swaync-client -t
+bindsym $mod+n exec swaync-client --toggle-panel
+bindsym $mod+Shift+d exec /home/aravinth/dotfiles/.config/i3/scripts/swaync-client-dnd.sh
