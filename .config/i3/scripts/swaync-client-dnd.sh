@@ -8,6 +8,7 @@ set -x
 
 notify() {
 	notify-send --urgency=critical \
+		--icon=/home/aravinth/Pictures/batman-logo-white-gb.png \
 		--app-name="$APP" \
 		--expire-time=$TTL \
 		--category="$NOTIFICATION_CATEGORY" \
