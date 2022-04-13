@@ -1,6 +1,7 @@
 #!/bin/bash
 
 readonly TTL=1
+readonly PING_TIMEOUT=2 # in seconds
 readonly APP="Launch Control"
 readonly NOTIFICATION_CATEGORY="Launch Control"
 readonly OFFLINE_STATUS="offline"
@@ -22,7 +23,7 @@ network_status=$ONLINE_STATUS
 
 while true
 do
-	if ping -c 1 -W 1 $IP &> /dev/null
+	if ping -c 1 -W $PING_TIMEOUT $IP &> /dev/null
 	then
 		if [ $network_status = $OFFLINE_STATUS ]
 		then
