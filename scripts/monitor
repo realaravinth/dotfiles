@@ -66,8 +66,7 @@ else
 				then
 						help
 				else
-						xrandr --output eDP-1-1 --brightness $2
-						xrandr --output HDMI-0  --brightness $2
+						brightnessctl set $2
 						redshift -m randr -O $(cat $CONFIG/brightness)
 						reload
 				fi
